@@ -1,4 +1,3 @@
-import React from "react";
 import { COMPANY_NAME } from "@/lib/constant";
 
 const StorySection: React.FC = () => (

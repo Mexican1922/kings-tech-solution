@@ -1,4 +1,3 @@
-import React from "react";
 import { COMPANY_NAME } from "@/lib/constant";
 
 // Optional: move pattern to a constant for cleaner JSX

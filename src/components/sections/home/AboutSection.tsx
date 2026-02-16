@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, Users, Zap, Shield } from "lucide-react";
 import type { LucideIcon } from "lucide-react";

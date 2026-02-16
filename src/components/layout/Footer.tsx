@@ -1,4 +1,3 @@
-import React from "react";
 import { Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 import {

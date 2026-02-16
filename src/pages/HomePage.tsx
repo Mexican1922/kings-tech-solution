@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "@/components/layout/Header";
 import HeroSection from "@/components/sections/home/HeroSection";
 import AboutSection from "@/components/sections/home/AboutSection";

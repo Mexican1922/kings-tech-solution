@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { team } from "@/data/aboutData";
 import { COMPANY_NAME } from "@/lib/constant";
