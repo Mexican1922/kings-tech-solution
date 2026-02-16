@@ -7,24 +7,24 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, MessageCircle, Users, Award } from "lucide-react";
 import { COMPANY_NAME, COMPANY_PHONE } from "@/lib/constant";
 
+const states = [
+  { value: "", label: "Choose a state" },
+  { value: "lagos", label: "Lagos" },
+  { value: "abuja", label: "Abuja (FCT)" },
+  { value: "kano", label: "Kano" },
+  { value: "rivers", label: "Rivers (Port Harcourt)" },
+  { value: "oyo", label: "Oyo (Ibadan)" },
+  { value: "kaduna", label: "Kaduna" },
+  { value: "enugu", label: "Enugu" },
+  { value: "edo", label: "Edo (Benin)" },
+  { value: "delta", label: "Delta (Warri/Asaba)" },
+  { value: "ondo", label: "Ondo" },
+  { value: "plateau", label: "Plateau (Jos)" },
+  { value: "cross-river", label: "Cross River (Calabar)" },
+];
+
 const FindInstallersPage = () => {
   const [selectedState, setSelectedState] = useState("");
-
-  const states = [
-    { value: "", label: "Choose a state" },
-    { value: "lagos", label: "Lagos" },
-    { value: "abuja", label: "Abuja (FCT)" },
-    { value: "kano", label: "Kano" },
-    { value: "rivers", label: "Rivers (Port Harcourt)" },
-    { value: "oyo", label: "Oyo (Ibadan)" },
-    { value: "kaduna", label: "Kaduna" },
-    { value: "enugu", label: "Enugu" },
-    { value: "edo", label: "Edo (Benin)" },
-    { value: "delta", label: "Delta (Warri/Asaba)" },
-    { value: "ondo", label: "Ondo" },
-    { value: "plateau", label: "Plateau (Jos)" },
-    { value: "cross-river", label: "Cross River (Calabar)" },
-  ];
 
   // Clean phone number for WhatsApp (remove spaces, +)
   const whatsappNumber = COMPANY_PHONE.replace(/\D/g, "");

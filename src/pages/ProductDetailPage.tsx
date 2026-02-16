@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -19,6 +18,7 @@ import {
   type ProductCategory,
 } from "@/data/services";
 import { COMPANY_NAME, COMPANY_PHONE } from "@/lib/constant";
+import { useState } from "react";
 
 const ProductDetailPage = () => {
   const { category, productSlug } = useParams();
