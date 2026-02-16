@@ -1,0 +1,1899 @@
+import {
+  Sun,
+  Battery,
+  Lightbulb,
+  Cpu,
+  Zap,
+  Camera,
+  Shield,
+  Cable,
+} from "lucide-react";
+import type { ElementType } from "react";
+
+export type ProductCategory =
+  | "panels"
+  | "batteries"
+  | "inverters"
+  | "controllers"
+  | "streetlights"
+  | "cctv"
+  | "wiring"
+  | "fencing";
+
+// Individual Product Interface
+export interface Product {
+  id: string;
+  name: string;
+  slug: string;
+  price: string;
+  originalPrice?: string;
+  image: string;
+  images?: string[];
+  rating: number;
+  reviews: number;
+  inStock: boolean;
+  badge?: string;
+  shortDescription: string;
+  description: string;
+  specs: string[];
+  features: string[];
+  warranty?: string;
+  dimensions?: string;
+  weight?: string;
+}
+
+// Old format for backward compatibility
+export interface ProductData {
+  title: string;
+  subtitle: string;
+  cta: string;
+  link: string;
+  featured: {
+    name: string;
+    image: string;
+    description: string;
+    specs: string[];
+  };
+  additional: {
+    name: string;
+    tag: string;
+  };
+}
+
+// Category Data Interface
+export interface CategoryData {
+  title: string;
+  subtitle: string;
+  icon: ElementType;
+  products: Product[];
+}
+
+export const categories: {
+  id: ProductCategory;
+  name: string;
+  icon: ElementType;
+}[] = [
+  { id: "panels", name: "Solar Panels", icon: Sun },
+  { id: "batteries", name: "Batteries", icon: Battery },
+  { id: "inverters", name: "Inverters", icon: Cpu },
+  { id: "controllers", name: "Charge Controllers", icon: Zap },
+  { id: "streetlights", name: "Street Lights", icon: Lightbulb },
+  { id: "cctv", name: "CCTV Systems", icon: Camera },
+  { id: "wiring", name: "House Wiring", icon: Cable },
+  { id: "fencing", name: "Electric Fencing", icon: Shield },
+];
+
+// Complete Products Database
+export const productsDatabase: Record<ProductCategory, CategoryData> = {
+  panels: {
+    title: "Solar Panels",
+    subtitle:
+      "High-performance monocrystalline solar panels for maximum energy output",
+    icon: Sun,
+    products: [
+      {
+        id: "1",
+        name: "Jinko 610W Half-Cut Bifacial Solar Panel",
+        slug: "jinko-610w-half-cut-bifacial-solar-panel",
+        price: "₦185,000",
+        originalPrice: "₦200,000",
+        image: "/assets/images/Jinko-610w-Solar-Panels.jpeg",
+        images: [
+          "/assets/images/Jinko-610w-Solar-Panels.jpeg",
+          "/assets/images/Jinko-Jinkosolar-580-W-Panel-Monofacial-Panels-Half-Cut-Watts.avif",
+          "/assets/images/550w-Half-Cut-Monofacial-Solar-Panels.jpeg",
+        ],
+        rating: 4.9,
+        reviews: 87,
+        inStock: true,
+        badge: "Best Seller",
+        shortDescription:
+          "Premium high-power bifacial panel for commercial installations",
+        description:
+          "The Jinko 610W Half-Cut Bifacial Solar Panel delivers exceptional efficiency and increased power generation using advanced bifacial technology. Designed for commercial and high-capacity residential systems, it captures sunlight from both sides to maximize energy yield and long-term performance.",
+        specs: [
+          "610W high power output",
+          "Advanced half-cut cell technology",
+          "Bifacial design for dual-side energy generation",
+          "High efficiency with reduced power loss",
+          "Durable frame for harsh weather conditions",
+          "Ideal for large residential and commercial installations",
+        ],
+        features: [
+          "Maximum Power: 610W",
+          "Efficiency: 21.2%",
+          "Voltage: 49.6V",
+          "Current: 12.3A",
+          "Cell Type: Monocrystalline Half-Cut",
+          "Bifacial Technology",
+        ],
+        warranty: "25-year performance warranty, 12-year product warranty",
+        dimensions: "2278 × 1134 × 35 mm",
+        weight: "32.5 kg",
+      },
+      {
+        id: "2",
+        name: "Jinko 550W Half-Cut Bifacial Solar Panel",
+        slug: "jinko-550w-half-cut-bifacial-solar-panel",
+        price: "₦165,000",
+        originalPrice: "₦180,000",
+        image: "/assets/images/Jinko-610w-Solar-Panels.jpeg",
+        images: [
+          "/assets/images/Jinko-610w-Solar-Panels.jpeg",
+          "/assets/images/Jinko-610w-Solar-Panels.jpeg",
+          "/assets/images/Jinko-610w-Solar-Panels.jpeg",
+        ],
+        rating: 4.8,
+        reviews: 124,
+        inStock: true,
+        badge: "Popular",
+        shortDescription:
+          "Reliable high-efficiency panel from trusted Canadian Solar",
+        description:
+          "Canadian Solar 550W panels are known for their reliability and consistent performance. Perfect for residential and small commercial installations, these panels deliver excellent value with proven track record in various climates including Nigeria's tropical conditions.",
+        specs: [
+          "550W rated power output",
+          "High efficiency monocrystalline cells",
+          "Excellent low-light performance",
+          "Anti-PID technology",
+          "Weather-resistant design",
+          "Certified for harsh environments",
+        ],
+        features: [
+          "Maximum Power: 550W",
+          "Efficiency: 21.0%",
+          "Voltage: 48.5V",
+          "Current: 11.34A",
+          "Cell Type: Monocrystalline",
+          "Temperature Coefficient: -0.34%/°C",
+        ],
+        warranty: "25-year performance warranty, 10-year product warranty",
+        dimensions: "2278 × 1134 × 35 mm",
+        weight: "28.6 kg",
+      },
+      {
+        id: "3",
+        name: "550W Half-Cut Monofacial Solar Panel",
+        slug: "550w-half-cut-monofacial-solar-panel",
+        price: "₦135,000",
+        image: "/assets/images/550w-Half-Cut-Monofacial-Solar-Panels.jpeg",
+        images: [
+          "/assets/images/550w-Half-Cut-Monofacial-Solar-Panels.jpeg",
+          "/assets/images/550w-Half-Cut-Monofacial-Solar-Panels.jpeg",
+          "/assets/images/550w-Half-Cut-Monofacial-Solar-Panels.jpeg",
+        ],
+        rating: 4.7,
+        reviews: 96,
+        inStock: true,
+        badge: "Best Seller",
+        shortDescription:
+          "Cost-effective solution for residential solar systems",
+        description:
+          "Longi 450W PERC panels offer excellent value for money with reliable performance. Ideal for budget-conscious homeowners who don't want to compromise on quality. These panels are perfect for medium-sized residential installations.",
+        specs: [
+          "450W power output",
+          "PERC technology for enhanced efficiency",
+          "Robust aluminum frame",
+          "Low degradation rate",
+          "Salt mist and ammonia resistant",
+          "Perfect for coastal areas",
+        ],
+        features: [
+          "Maximum Power: 450W",
+          "Efficiency: 20.5%",
+          "Voltage: 41.7V",
+          "Current: 10.79A",
+          "Cell Type: Monocrystalline PERC",
+          "Fire Class: Class C",
+        ],
+        warranty: "25-year performance warranty, 10-year product warranty",
+        dimensions: "2094 × 1038 × 35 mm",
+        weight: "24.5 kg",
+      },
+      {
+        id: "4",
+        name: "450W Half-Cut Monofacial Solar Panel",
+        slug: "450w-half-cut-monofacial-solar-panel",
+        price: "₦98,000",
+        image:
+          "/assets/images/sunfield-450w-monocrystaline-watts-solar-panel_1.0.webp",
+        rating: 4.6,
+        reviews: 68,
+        inStock: true,
+        shortDescription: "Compact panel perfect for limited roof space",
+        description:
+          "JA Solar 380W panels are designed for installations where space is at a premium. Despite their compact size, these panels deliver impressive power output and are perfect for urban residential installations with limited roof space.",
+        specs: [
+          "380W compact design",
+          "Space-efficient installation",
+          "High power density",
+          "Excellent shade tolerance",
+          "Lightweight construction",
+          "Easy installation",
+        ],
+        features: [
+          "Maximum Power: 380W",
+          "Efficiency: 19.8%",
+          "Voltage: 40.5V",
+          "Current: 9.38A",
+          "Cell Type: Monocrystalline",
+          "Bypass Diodes: 3",
+        ],
+        warranty: "25-year performance warranty, 10-year product warranty",
+        dimensions: "1776 × 1052 × 35 mm",
+        weight: "20.5 kg",
+      },
+      {
+        id: "5",
+        name: "Jinko 600W Half-Cut Bifacial Solar Panel",
+        slug: "jinko-600w-half-cut-bifacial-solar-panel",
+        price: "₦152,000",
+        image: "/assets/images/Jinko-610w-Solar-Panels.jpeg",
+        rating: 4.8,
+        reviews: 54,
+        inStock: true,
+        badge: "New",
+        shortDescription:
+          "Latest technology with optimized temperature coefficient",
+        description:
+          "Trina Solar's Vertex series brings cutting-edge technology with improved temperature performance. These 500W panels maintain high efficiency even in hot climates, making them perfect for Nigeria's weather conditions.",
+        specs: [
+          "500W with Vertex technology",
+          "Improved temperature coefficient",
+          "210mm large silicon wafers",
+          "Multi-busbar technology",
+          "Enhanced mechanical load",
+          "Snow load: 5400Pa, Wind load: 2400Pa",
+        ],
+        features: [
+          "Maximum Power: 500W",
+          "Efficiency: 20.8%",
+          "Voltage: 46.2V",
+          "Current: 10.82A",
+          "Cell Type: Monocrystalline",
+          "Improved Low Irradiance Performance",
+        ],
+        warranty: "25-year performance warranty, 12-year product warranty",
+        dimensions: "2094 × 1096 × 35 mm",
+        weight: "27.3 kg",
+      },
+      {
+        id: "6",
+        name: "Jinko 650W Half-Cut Bifacial Solar Panel",
+        slug: "jinko-650w-half-cut-bifacial-solar-panel",
+        price: "₦152,000",
+        image: "/assets/images/Jinko-610w-Solar-Panels.jpeg",
+        rating: 4.8,
+        reviews: 54,
+        inStock: true,
+        badge: "New",
+        shortDescription:
+          "Latest technology with optimized temperature coefficient",
+        description:
+          "Trina Solar's Vertex series brings cutting-edge technology with improved temperature performance. These 500W panels maintain high efficiency even in hot climates, making them perfect for Nigeria's weather conditions.",
+        specs: [
+          "500W with Vertex technology",
+          "Improved temperature coefficient",
+          "210mm large silicon wafers",
+          "Multi-busbar technology",
+          "Enhanced mechanical load",
+          "Snow load: 5400Pa, Wind load: 2400Pa",
+        ],
+        features: [
+          "Maximum Power: 500W",
+          "Efficiency: 20.8%",
+          "Voltage: 46.2V",
+          "Current: 10.82A",
+          "Cell Type: Monocrystalline",
+          "Improved Low Irradiance Performance",
+        ],
+        warranty: "25-year performance warranty, 12-year product warranty",
+        dimensions: "2094 × 1096 × 35 mm",
+        weight: "27.3 kg",
+      },
+      {
+        id: "7",
+        name: "575W Half-Cut Monofacial Solar Panel",
+        slug: "575w-half-cut-monofacial-solar-panel",
+        price: "₦98,000",
+        image:
+          "/assets/images/sunfield-450w-monocrystaline-watts-solar-panel_1.0.webp",
+        rating: 4.6,
+        reviews: 68,
+        inStock: true,
+        shortDescription: "Compact panel perfect for limited roof space",
+        description:
+          "JA Solar 380W panels are designed for installations where space is at a premium. Despite their compact size, these panels deliver impressive power output and are perfect for urban residential installations with limited roof space.",
+        specs: [
+          "380W compact design",
+          "Space-efficient installation",
+          "High power density",
+          "Excellent shade tolerance",
+          "Lightweight construction",
+          "Easy installation",
+        ],
+        features: [
+          "Maximum Power: 380W",
+          "Efficiency: 19.8%",
+          "Voltage: 40.5V",
+          "Current: 9.38A",
+          "Cell Type: Monocrystalline",
+          "Bypass Diodes: 3",
+        ],
+        warranty: "25-year performance warranty, 10-year product warranty",
+        dimensions: "1776 × 1052 × 35 mm",
+        weight: "20.5 kg",
+      },
+      {
+        id: "8",
+        name: "600W Half-Cut Monofacial Solar Panel",
+        slug: "600w-half-cut-monofacial-solar-panel",
+        price: "₦135,000",
+        image: "/assets/images/550w-Half-Cut-Monofacial-Solar-Panels.jpeg",
+        images: [
+          "/assets/images/550w-Half-Cut-Monofacial-Solar-Panels.jpeg",
+          "/assets/images/sunfield-450w-monocrystaline-watts-solar-panel_1.0.webp",
+          "/assets/images/550w-Half-Cut-Monofacial-Solar-Panels.jpeg",
+        ],
+        rating: 4.7,
+        reviews: 96,
+        inStock: true,
+        badge: "Best Seller",
+        shortDescription:
+          "Cost-effective solution for residential solar systems",
+        description:
+          "Longi 450W PERC panels offer excellent value for money with reliable performance. Ideal for budget-conscious homeowners who don't want to compromise on quality. These panels are perfect for medium-sized residential installations.",
+        specs: [
+          "450W power output",
+          "PERC technology for enhanced efficiency",
+          "Robust aluminum frame",
+          "Low degradation rate",
+          "Salt mist and ammonia resistant",
+          "Perfect for coastal areas",
+        ],
+        features: [
+          "Maximum Power: 450W",
+          "Efficiency: 20.5%",
+          "Voltage: 41.7V",
+          "Current: 10.79A",
+          "Cell Type: Monocrystalline PERC",
+          "Fire Class: Class C",
+        ],
+        warranty: "25-year performance warranty, 10-year product warranty",
+        dimensions: "2094 × 1038 × 35 mm",
+        weight: "24.5 kg",
+      },
+    ],
+  },
+
+  batteries: {
+    title: "Solar Batteries",
+    subtitle: "Reliable energy storage solutions with long-lasting performance",
+    icon: Battery,
+    products: [
+      {
+        id: "9",
+        name: "15kWh Cworth Lithium Battery",
+        slug: "15kwh-cworth-lithium-battery",
+        price: "₦2,850,000",
+        originalPrice: "₦3,200,000",
+        image: "/assets/images/battery.jpeg",
+        images: [
+          "/assets/images/battery.jpeg",
+          "/assets/images/battery.jpeg",
+          "/assets/images/battery.jpeg",
+        ],
+        rating: 4.9,
+        reviews: 45,
+        inStock: true,
+        badge: "Best Seller",
+        shortDescription:
+          "High-capacity lithium battery for residential and commercial use",
+        description:
+          "The 15kWh Cworth Lithium Battery is a high-capacity energy storage solution designed for residential and commercial solar systems. Built with advanced lithium technology, it delivers stable power output, faster charging, deep discharge capability, and long service life for uninterrupted energy supply.",
+        specs: [
+          "15kWh high energy storage capacity",
+          "Advanced lithium battery technology",
+          "Deep cycle performance with high efficiency",
+          "Fast charging and low self-discharge rate",
+          "Long lifespan with intelligent BMS protection",
+          "Ideal for hybrid and off-grid solar systems",
+        ],
+        features: [
+          "Capacity: 15kWh (15,000Wh)",
+          "Voltage: 51.2V",
+          "Battery Type: LiFePO4",
+          "Cycle Life: 6000+ cycles @ 80% DOD",
+          "Discharge Rate: 1C continuous",
+          "BMS Protection: Overcharge, Over-discharge, Short circuit",
+        ],
+        warranty: "10-year warranty",
+        dimensions: "600 × 450 × 250 mm",
+        weight: "120 kg",
+      },
+      {
+        id: "10",
+        name: "Felicity 15kwh 48v Lithium Battery",
+        slug: "felicity-15kwh-48v-lithium-battery",
+        price: "₦1,950,000",
+        image: "/assets/images/felicity-15kwh-48v-lithium-battery.jpeg",
+        rating: 4.8,
+        reviews: 67,
+        inStock: true,
+        badge: "Popular",
+        shortDescription: "Modular lithium system with expandable capacity",
+        description:
+          "Pylontech 10kWh battery offers modular design allowing easy expansion. Perfect for growing energy needs, this system can be expanded up to 40kWh. Trusted by installers worldwide for reliability and performance.",
+        specs: [
+          "10kWh modular capacity",
+          "Expandable up to 40kWh",
+          "Plug and play installation",
+          "Compatible with major inverters",
+          "Intelligent BMS",
+          "Parallel connection support",
+        ],
+        features: [
+          "Capacity: 10kWh",
+          "Voltage: 48V",
+          "Battery Type: LiFePO4",
+          "Cycle Life: 6000 cycles",
+          "Max Charge Current: 100A",
+          "Max Discharge Current: 100A",
+        ],
+        warranty: "10-year warranty",
+        dimensions: "440 × 420 × 410 mm",
+        weight: "95 kg",
+      },
+      {
+        id: "11",
+        name: "Felicity 10kwh 48v Lithium Battery",
+        slug: "felicity-10kwh-48v-lithium-battery",
+        price: "₦145,000",
+        image: "/assets/images/felicity-10kwh-48v-lithium-battery.jpeg",
+        rating: 4.6,
+        reviews: 134,
+        inStock: true,
+        badge: "Value",
+        shortDescription:
+          "Affordable gel battery for budget-conscious installations",
+        description:
+          "200Ah Tubular Gel batteries offer reliable performance at an affordable price. Perfect for smaller systems or as backup to lithium batteries. Maintenance-free design with good cycle life.",
+        specs: [
+          "200Ah @ 12V capacity",
+          "Tubular plate technology",
+          "Sealed maintenance-free",
+          "Deep discharge recovery",
+          "Spill-proof design",
+          "Good heat tolerance",
+        ],
+        features: [
+          "Capacity: 200Ah",
+          "Voltage: 12V",
+          "Battery Type: Gel Deep Cycle",
+          "Cycle Life: 1200 cycles @ 50% DOD",
+          "Float Life: 10-12 years",
+          "Self-Discharge: <3% per month",
+        ],
+        warranty: "2-year warranty",
+        dimensions: "520 × 240 × 220 mm",
+        weight: "58 kg",
+      },
+      {
+        id: "12",
+        name: "Felicity 7.2kwh 48v Lithium Battery",
+        slug: "felicity-7.2kwh-48v-lithium-battery",
+        price: "₦980,000",
+        image: "/assets/images/felicity-7.2kwh-48v-lithium-battery.jpeg",
+        rating: 4.7,
+        reviews: 38,
+        inStock: true,
+        shortDescription:
+          "Compact lithium battery for small residential systems",
+        description:
+          "Felicity 5kWh battery is perfect for small homes with modest energy needs. Compact design, easy installation, and reliable performance make it ideal for starter solar systems.",
+        specs: [
+          "5kWh compact capacity",
+          "Wall-mountable design",
+          "Silent operation",
+          "Fast charging capability",
+          "Smart battery management",
+          "Compatible with hybrid inverters",
+        ],
+        features: [
+          "Capacity: 5kWh",
+          "Voltage: 51.2V",
+          "Battery Type: LiFePO4",
+          "Cycle Life: 6000 cycles",
+          "Charge/Discharge Rate: 1C",
+          "Operating Temperature: -10°C to 50°C",
+        ],
+        warranty: "7-year warranty",
+        dimensions: "500 × 350 × 180 mm",
+        weight: "45 kg",
+      },
+      {
+        id: "13",
+        name: "Deye 5.12KW Lithium Ion Battery",
+        slug: "deye-5.12kw-lithium-ion-battery",
+        price: "₦850,000",
+        image: "/assets/images/deye-5.12kw-lithium-ion-battery.jpeg",
+        rating: 4.8,
+        reviews: 42,
+        inStock: true,
+        badge: "New",
+        shortDescription:
+          "High-performance lithium ion battery for commercial applications",
+        description:
+          "Deye 5.12KW lithium ion battery delivers exceptional performance and reliability for commercial solar installations. With advanced BMS and high energy density, it's ideal for large-scale energy storage.",
+        specs: [
+          "5.12kWh capacity",
+          "Lithium iron phosphate chemistry",
+          "High energy density",
+          "Fast charging capability",
+          "Smart BMS protection",
+          "Long cycle life",
+        ],
+        features: [
+          "Capacity: 5.12kWh",
+          "Voltage: 48V",
+          "Battery Type: LiFePO4",
+          "Cycle Life: 6000 cycles @ 80% DOD",
+          "Charge/Discharge Rate: 1C (max)",
+          "Operating Temperature: -10°C to 50°C",
+        ],
+        warranty: "7-year warranty",
+        dimensions: "480 × 360 × 170 mm",
+        weight: "38 kg",
+      },
+    ],
+  },
+
+  inverters: {
+    title: "Solar Inverters",
+    subtitle: "Intelligent hybrid inverters for seamless power management",
+    icon: Cpu,
+    products: [
+      {
+        id: "14",
+        name: "Felicity 5KVA Hybrid Inverter",
+        slug: "felicity-5kva-hybrid-inverter",
+        price: "₦420,000",
+        originalPrice: "₦480,000",
+        image: "/assets/images/Inverter.jpeg",
+        images: [
+          "/assets/images/Inverter.jpeg",
+          "/assets/images/Inverter.jpeg",
+          "/assets/images/Inverter.jpeg",
+        ],
+        rating: 4.8,
+        reviews: 92,
+        inStock: true,
+        badge: "Best Seller",
+        shortDescription: "Smart hybrid inverter for residential solar systems",
+        description:
+          "The Felicity 5KVA Hybrid Inverter is a powerful and intelligent energy management solution designed for residential and small commercial solar systems. With advanced MPPT technology, seamless switching between solar, battery, and grid power, and pure sine wave output, it ensures stable and uninterrupted electricity supply.",
+        specs: [
+          "5KVA rated output capacity",
+          "Advanced MPPT solar charge controller",
+          "Hybrid functionality (Solar + Battery + Grid)",
+          "Pure sine wave output for sensitive appliances",
+          "LCD display with real-time monitoring",
+          "Built-in protection against overload & short circuit",
+        ],
+        features: [
+          "Output Power: 5000VA / 4000W",
+          "Input Voltage: 120-280VAC",
+          "Battery Voltage: 48V",
+          "MPPT Range: 120-450VDC",
+          "Max Solar Input: 4500W",
+          "Efficiency: >95%",
+        ],
+        warranty: "2-year warranty",
+        dimensions: "480 × 380 × 155 mm",
+        weight: "25 kg",
+      },
+      {
+        id: "15",
+        name: "Felicity 5kva 24v Inverter",
+        slug: "felicity-5kva-24v-inverter",
+        price: "₦750,000",
+        image: "/assets/images/felicity-5kva-24v-inverter.jpeg",
+        rating: 4.9,
+        reviews: 56,
+        inStock: true,
+        badge: "Premium",
+        shortDescription: "Heavy-duty inverter for large homes and businesses",
+        description:
+          "Must 10KVA inverter handles high power loads with ease. Perfect for large residential homes, offices, and small businesses. Features dual MPPT for optimal solar harvesting.",
+        specs: [
+          "10KVA output capacity",
+          "Dual MPPT charge controllers",
+          "Three-phase ready",
+          "Parallel capability up to 6 units",
+          "WiFi monitoring",
+          "Generator compatible",
+        ],
+        features: [
+          "Output Power: 10000VA / 8000W",
+          "Input Voltage: 90-280VAC",
+          "Battery Voltage: 48V",
+          "Dual MPPT: 2 × 4500W",
+          "Max Solar Input: 9000W",
+          "Surge Power: 16000W (3 sec)",
+        ],
+        warranty: "3-year warranty",
+        dimensions: "580 × 450 × 195 mm",
+        weight: "42 kg",
+      },
+      {
+        id: "16",
+        name: "Felicity 7.5kva 48v Hybrid Inverter",
+        slug: "felicity-7.5kva-48v-hybrid-inverter",
+        price: "₦320,000",
+        image: "/assets/images/felicity-7.5kva-48v-hybrid-inverter.jpeg",
+        rating: 4.7,
+        reviews: 74,
+        inStock: true,
+        shortDescription: "Compact inverter perfect for small homes",
+        description:
+          "Solis 3.6KW is ideal for apartments and small houses. Compact size, easy installation, and reliable performance make it a popular choice for starter solar systems.",
+        specs: [
+          "3.6KW output power",
+          "Single MPPT",
+          "Compact design",
+          "WiFi ready",
+          "Smart app control",
+          "Battery compatible",
+        ],
+        features: [
+          "Output Power: 3600VA / 3000W",
+          "Input Voltage: 140-280VAC",
+          "Battery Voltage: 48V",
+          "Max Solar Input: 4000W",
+          "MPPT Efficiency: 99.5%",
+          "Conversion Efficiency: 97%",
+        ],
+        warranty: "2-year warranty",
+        dimensions: "420 × 320 × 145 mm",
+        weight: "18 kg",
+      },
+      {
+        id: "17",
+        name: "1.8kva Cworth Inverter",
+        slug: "cworth-1.8kva-inverter",
+        price: "₦1,250,000",
+        image: "/assets/images/cworth-1.8kva-inverter.jpeg",
+        rating: 5.0,
+        reviews: 28,
+        inStock: true,
+        badge: "Premium",
+        shortDescription: "Top-tier European inverter with advanced features",
+        description:
+          "Victron MultiPlus is the gold standard in inverter technology. European engineering, bulletproof reliability, and advanced features make it worth the premium for critical installations.",
+        specs: [
+          "8KVA continuous power",
+          "PowerAssist technology",
+          "Advanced battery management",
+          "Remote VRM monitoring",
+          "Generator support",
+          "Modular parallel capability",
+        ],
+        features: [
+          "Output Power: 8000VA / 6400W",
+          "Input Voltage: 90-280VAC",
+          "Battery Voltage: 48V",
+          "Charge Current: 100A",
+          "Transfer Switch: 50A",
+          "Peak Power: 16000VA",
+        ],
+        warranty: "5-year warranty",
+        dimensions: "520 × 285 × 125 mm",
+        weight: "30 kg",
+      },
+      {
+        id: "18",
+        name: "SRNR 3.3kW 24V DC Inverter",
+        slug: "srnr-3.3kw-24vdc-inverter",
+        price: "₦1,100,000",
+        image: "/assets/images/srnr-3.3kw-24vdc-inverter.jpeg",
+        rating: 4.8,
+        reviews: 42,
+        inStock: true,
+        badge: "New Arrival",
+        shortDescription: "Compact DC inverter for residential use",
+        description:
+          "SRNR 3.3kW DC Inverter is designed for residential applications with a compact footprint and high efficiency. Ideal for off-grid homes and small businesses.",
+        specs: [
+          "3.3kW output power",
+          "24V DC input voltage",
+          "Compact design",
+          "High conversion efficiency",
+          "Built-in protection features",
+          "Easy installation and maintenance",
+        ],
+        features: [
+          "Output Power: 3300VA / 2640W",
+          "Input Voltage: 24VDC",
+          "Max PV Input: 500W @ 24VDC",
+          "MPPT Efficiency: 97%",
+          "Peak Power: 6600VA (1 sec)",
+          "Battery Type Compatible: LiFePO4, Lead Acid, AGM, GEL, Flooded Battery",
+        ],
+        warranty: "1-year warranty",
+        dimensions: "285 × 175 × 115 mm",
+        weight: "8 kg",
+      },
+      {
+        id: "19",
+        name: "SRNR 10kW 48V DC Inverter",
+        slug: "srnr-10kw-48vdc-inverter",
+        price: "₦1,100,000",
+        image: "/assets/images/srnr-10kw-48Vdc-Inverter.jpeg",
+        rating: 4.8,
+        reviews: 42,
+        inStock: true,
+        badge: "New Arrival",
+        shortDescription: "Compact DC inverter for residential use",
+        description:
+          "SRNR 10kW DC Inverter is designed for residential applications with a compact footprint and high efficiency. Ideal for off-grid homes and small businesses.",
+        specs: [
+          "10kW output power",
+          "24V DC input voltage",
+          "Compact design",
+          "High conversion efficiency",
+          "Built-in protection features",
+          "Easy installation and maintenance",
+        ],
+        features: [
+          "Output Power: 3300VA / 2640W",
+          "Input Voltage: 24VDC",
+          "Max PV Input: 500W @ 24VDC",
+          "MPPT Efficiency: 97%",
+          "Peak Power: 6600VA (1 sec)",
+          "Battery Type Compatible: LiFePO4, Lead Acid, AGM, GEL, Flooded Battery",
+        ],
+        warranty: "1-year warranty",
+        dimensions: "285 × 175 × 115 mm",
+        weight: "8 kg",
+      },
+      {
+        id: "20",
+        name: "SRNE ASP Series 12kW 48V 200A MPPT Hybrid Inverter",
+        slug: "srne-asp-series-12kw-48v-200a-mppt-hybrid-inverter",
+        price: "₦1,500,000",
+        image: "/assets/images/series.jpeg",
+        rating: 4.9,
+        reviews: 35,
+        inStock: true,
+        badge: "Premium",
+        shortDescription:
+          "High-performance hybrid inverter for large-scale solar installations",
+        description:
+          "SRNE ASP Series 12kW 48V 200A MPPT Hybrid Inverter is engineered for large-scale solar installations with high efficiency and reliability. Features advanced MPPT technology and seamless grid integration.",
+        specs: [
+          "12kW output power",
+          "48V DC input voltage",
+          "MPPT technology",
+          "Hybrid inverter design",
+          "Grid-tie capability",
+          "Advanced monitoring system",
+        ],
+        features: [
+          "Output Power: 12,000VA / 9,600W",
+          "Input Voltage: 48VDC",
+          "Max PV Input: 1500W @ 48VDC",
+          "MPPT Efficiency: 99%",
+          "Peak Power: 24,000VA (1 sec)",
+          "Battery Type Compatible: LiFePO4, Lead Acid, AGM, GEL, Flooded Battery",
+        ],
+        warranty: "3-year warranty",
+        dimensions: "375 × 235 × 135 mm",
+        weight: "15 kg",
+      },
+      {
+        id: "21",
+        name: "SMS 2KVA 12V Hybrid Inverter",
+        slug: "sms-2kva-12v-hybrid-inverter",
+        price: "₦450,000",
+        image: "/assets/images/12v-Hybrid-Inverter.jpeg",
+        rating: 4.5,
+        reviews: 48,
+        inStock: true,
+        badge: "Popular",
+        shortDescription:
+          "Compact hybrid inverter for residential and small commercial use",
+        description:
+          "The SMS 2KVA 12V Hybrid Inverter is a compact and reliable solution for residential and small commercial applications. It offers seamless integration with solar panels and battery systems.",
+        specs: [
+          "2KVA output power",
+          "12V DC input voltage",
+          "Hybrid inverter design",
+          "Grid-tie capability",
+          "Built-in battery management system",
+          "Easy installation and maintenance",
+        ],
+        features: [
+          "Output Power: 2,000VA / 1,600W",
+          "Input Voltage: 12VDC",
+          "Max PV Input: 300W @ 12VDC",
+          "MPPT Efficiency: 95%",
+          "Peak Power: 4,000VA (1 sec)",
+          "Battery Type Compatible: LiFePO4, Lead Acid, AGM, GEL, Flooded Battery",
+        ],
+        warranty: "1-year warranty",
+        dimensions: "355 × 185 × 135 mm",
+        weight: "7 kg",
+      },
+      {
+        id: "22",
+        name: "SMS 4.2KVA 24V Hybrid Inverter",
+        slug: "sms-4.2kva-24v-hybrid-inverter",
+        price: "₦650,000",
+        image: "/assets/images/24v-Hybrid-Inverter.jpeg",
+        rating: 4.7,
+        reviews: 48,
+        inStock: true,
+        badge: "Popular",
+        shortDescription:
+          "Compact hybrid inverter for residential and small commercial use",
+        description:
+          "The SMS 4.2KVA 24V Hybrid Inverter is a compact and reliable solution for residential and small commercial applications. It offers seamless integration with solar panels and battery systems.",
+        specs: [
+          "4.2KVA output power",
+          "24V DC input voltage",
+          "Hybrid inverter design",
+          "Grid-tie capability",
+          "Built-in battery management system",
+          "Easy installation and maintenance",
+        ],
+        features: [
+          "Output Power: 4,200VA / 3,360W",
+          "Input Voltage: 24VDC",
+          "Max PV Input: 600W @ 24VDC",
+          "MPPT Efficiency: 95%",
+          "Peak Power: 4,000VA (1 sec)",
+          "Battery Type Compatible: LiFePO4, Lead Acid, AGM, GEL, Flooded Battery",
+        ],
+        warranty: "1-year warranty",
+        dimensions: "355 × 185 × 135 mm",
+        weight: "7 kg",
+      },
+      {
+        id: "23",
+        name: "SMS 10.2KVA 48V Hybrid Inverter",
+        slug: "sms-10.2kva-48v-hybrid-inverter",
+        price: "₦1,250,000",
+        image: "/assets/images/48v-Hybrid-Inverter.jpeg",
+        rating: 4.9,
+        reviews: 32,
+        inStock: true,
+        badge: "Premium",
+        shortDescription:
+          "High-capacity hybrid inverter for large residential and commercial applications",
+        description:
+          "The SMS 10.2KVA 48V Hybrid Inverter is a high-capacity solution for large residential and commercial applications. It offers seamless integration with solar panels and battery systems.",
+        specs: [
+          "10.2KVA output power",
+          "48V DC input voltage",
+          "Hybrid inverter design",
+          "Grid-tie capability",
+          "Built-in battery management system",
+          "Easy installation and maintenance",
+        ],
+        features: [
+          "Output Power: 10,200VA / 8,160W",
+          "Input Voltage: 48VDC",
+          "Max PV Input: 1500W @ 48VDC",
+          "MPPT Efficiency: 99%",
+          "Peak Power: 20,400VA (1 sec)",
+          "Battery Type Compatible: LiFePO4, Lead Acid, AGM, GEL, Flooded Battery",
+        ],
+        warranty: "3-year warranty",
+        dimensions: "375 × 235 × 135 mm",
+        weight: "15 kg",
+      },
+    ],
+  },
+
+  controllers: {
+    title: "Charge Controllers",
+    subtitle: "MPPT and PWM controllers for optimal battery charging",
+    icon: Zap,
+    products: [
+      {
+        id: "24",
+        name: "Felicity 80A MPPT Charge Controller",
+        slug: "felicity-80a-mppt-charge-controller",
+        price: "₦85,000",
+        image: "/assets/images/controller.jpeg",
+        images: [
+          "/assets/images/controller.jpeg",
+          "/assets/images/controller.jpeg",
+          "/assets/images/controller.jpeg",
+        ],
+        rating: 4.7,
+        reviews: 63,
+        inStock: true,
+        badge: "Best Seller",
+        shortDescription: "High-current MPPT controller with LCD display",
+        description:
+          "The Felicity 80A MPPT Charge Controller intelligently tracks the maximum power point of your solar panels to ensure optimal charging performance. Built for reliability and safety, it enhances energy harvest while protecting your battery system from damage.",
+        specs: [
+          "80A maximum charging current",
+          "Advanced MPPT tracking technology",
+          "High conversion efficiency",
+          "LCD display with real-time monitoring",
+          "Overcharge, short-circuit & reverse polarity protection",
+          "Compatible with lithium and lead-acid batteries",
+        ],
+        features: [
+          "Max Current: 80A",
+          "System Voltage: 12V/24V/48V Auto",
+          "Max PV Input: 150V",
+          "MPPT Efficiency: 99%",
+          "Max PV Power: 4000W @ 48V",
+          "Battery Type: Sealed, Gel, Flooded, Lithium",
+        ],
+        warranty: "2-year warranty",
+        dimensions: "370 × 210 × 105 mm",
+        weight: "3.5 kg",
+      },
+      {
+        id: "25",
+        name: "Felicity 120A charge controller",
+        slug: "felicity-120a-charge-controller",
+        price: "₦145,000",
+        image: "/assets/images/felicity-120a.jpeg",
+        rating: 4.9,
+        reviews: 82,
+        inStock: true,
+        badge: "Premium",
+        shortDescription: "Smart MPPT controller with Bluetooth connectivity",
+        description:
+          "Victron SmartSolar offers advanced MPPT algorithm with Bluetooth connectivity for easy monitoring via smartphone app. Premium European quality with excellent support.",
+        specs: [
+          "50A charging current",
+          "Bluetooth built-in",
+          "VictronConnect app",
+          "Ultra-fast MPPT",
+          "Flexible charging algorithm",
+          "Battery Life algorithm",
+        ],
+        features: [
+          "Max Current: 50A",
+          "System Voltage: 12V/24V/48V",
+          "Max PV Input: 100V",
+          "MPPT Efficiency: 98%",
+          "Max PV Power: 2400W @ 48V",
+          "App Control: iOS & Android",
+        ],
+        warranty: "5-year warranty",
+        dimensions: "215 × 110 × 60 mm",
+        weight: "1.3 kg",
+      },
+      {
+        id: "26",
+        name: "Felicity  60A charge controller",
+        slug: "felicity-60a-charge-controller",
+        price: "₦65,000",
+        image: "/assets/images/controller.jpeg",
+        rating: 4.6,
+        reviews: 95,
+        inStock: true,
+        badge: "Value",
+        shortDescription: "Reliable MPPT controller at affordable price",
+        description:
+          "EPSolar 60A offers excellent value with reliable MPPT performance. Perfect for budget-conscious installations without compromising on essential features.",
+        specs: [
+          "60A charging current",
+          "Automatic voltage detection",
+          "LCD display",
+          "Temperature compensation",
+          "Multi-stage charging",
+          "Wide PV input range",
+        ],
+        features: [
+          "Max Current: 60A",
+          "System Voltage: 12V/24V/36V/48V Auto",
+          "Max PV Input: 150V",
+          "MPPT Efficiency: 97%",
+          "Max PV Power: 3000W @ 48V",
+          "Temperature Sensor: Included",
+        ],
+        warranty: "2-year warranty",
+        dimensions: "315 × 280 × 105 mm",
+        weight: "2.8 kg",
+      },
+      // {
+      //   id: "17",
+      //   name: "Morningstar TriStar 45A MPPT",
+      //   slug: "morningstar-tristar-45a-mppt",
+      //   price: "₦185,000",
+      //   image: "/assets/images/morningstar-45a.jpeg",
+      //   rating: 4.8,
+      //   reviews: 41,
+      //   inStock: true,
+      //   shortDescription: "Industrial-grade MPPT for harsh environments",
+      //   description:
+      //     "Morningstar TriStar is built for extreme conditions. Conformal-coated circuit boards, wide operating temperature range, and bulletproof reliability make it perfect for remote installations.",
+      //   specs: [
+      //     "45A charging current",
+      //     "Industrial-grade components",
+      //     "Conformal coating",
+      //     "Wide temperature range",
+      //     "Lightning protection",
+      //     "Remote monitoring ready",
+      //   ],
+      //   features: [
+      //     "Max Current: 45A",
+      //     "System Voltage: 12V/24V/48V",
+      //     "Max PV Input: 150V",
+      //     "MPPT Efficiency: 99%",
+      //     "Operating Temp: -40°C to +60°C",
+      //     "Warranty: 5 years",
+      //   ],
+      //   warranty: "5-year warranty",
+      //   dimensions: "256 × 149 × 64 mm",
+      //   weight: "1.8 kg",
+      // },
+    ],
+  },
+
+  streetlights: {
+    title: "Solar Street Lights",
+    subtitle: "All-in-one solar lighting solutions for streets and pathways",
+    icon: Lightbulb,
+    products: [
+      {
+        id: "27",
+        name: "Felicity 60W All-in-One Solar Street Light",
+        slug: "felicity-60w-all-in-one-solar-street-light",
+        price: "₦120,000",
+        image: "/assets/images/street-lights.jpeg",
+        rating: 4.8,
+        reviews: 76,
+        inStock: true,
+        badge: "Best Seller",
+        shortDescription: "Complete integrated street light with motion sensor",
+        description:
+          "Felicity 60W all-in-one street light combines solar panel, battery, LED, and controller in one compact unit. Easy installation, automatic operation, and reliable performance make it perfect for streets, parking lots, and compounds.",
+        specs: [
+          "60W LED output",
+          "Integrated solar panel",
+          "Built-in lithium battery",
+          "Motion sensor included",
+          "Automatic dusk-to-dawn",
+          "IP65 waterproof",
+        ],
+        features: [
+          "LED Power: 60W",
+          "Luminous Flux: 7200 lumens",
+          "Solar Panel: 80W",
+          "Battery: 30Ah LiFePO4",
+          "Runtime: 12 hours",
+          "Pole Height: 5-6 meters",
+        ],
+        warranty: "3-year warranty",
+        dimensions: "780 × 280 × 60 mm",
+        weight: "12 kg",
+      },
+      // {
+      //   id: "19",
+      //   name: "100W Solar Street Light with Remote",
+      //   slug: "100w-solar-street-light-with-remote",
+      //   price: "₦165,000",
+      //   image: "/assets/images/street-light-100w.jpeg",
+      //   rating: 4.9,
+      //   reviews: 52,
+      //   inStock: true,
+      //   badge: "Premium",
+      //   shortDescription: "High-power street light with remote control",
+      //   description:
+      //     "100W solar street light provides powerful illumination for wide areas. Remote control allows easy adjustment of brightness and timing. Perfect for highways and large compounds.",
+      //   specs: [
+      //     "100W high-power LED",
+      //     "Remote control included",
+      //     "Adjustable brightness",
+      //     "Timer function",
+      //     "Motion sensor mode",
+      //     "Weather resistant",
+      //   ],
+      //   features: [
+      //     "LED Power: 100W",
+      //     "Luminous Flux: 12000 lumens",
+      //     "Solar Panel: 120W",
+      //     "Battery: 50Ah LiFePO4",
+      //     "Runtime: 15 hours",
+      //     "Coverage: 8-10 meters radius",
+      //   ],
+      //   warranty: "3-year warranty",
+      //   dimensions: "950 × 350 × 70 mm",
+      //   weight: "18 kg",
+      // },
+      // {
+      //   id: "20",
+      //   name: "40W Solar Street Light",
+      //   slug: "40w-solar-street-light",
+      //   price: "₦85,000",
+      //   image: "/assets/images/street-light-40w.jpeg",
+      //   rating: 4.6,
+      //   reviews: 94,
+      //   inStock: true,
+      //   badge: "Value",
+      //   shortDescription: "Budget-friendly solar light for pathways",
+      //   description:
+      //     "40W solar street light offers reliable illumination at an affordable price. Perfect for garden paths, driveways, and small compounds. Easy installation with no wiring required.",
+      //   specs: [
+      //     "40W LED output",
+      //     "Compact design",
+      //     "Plug and play",
+      //     "Auto on/off",
+      //     "No wiring needed",
+      //     "Low maintenance",
+      //   ],
+      //   features: [
+      //     "LED Power: 40W",
+      //     "Luminous Flux: 4800 lumens",
+      //     "Solar Panel: 60W",
+      //     "Battery: 20Ah LiFePO4",
+      //     "Runtime: 10 hours",
+      //     "Pole Height: 3-4 meters",
+      //   ],
+      //   warranty: "2-year warranty",
+      //   dimensions: "650 × 240 × 50 mm",
+      //   weight: "8 kg",
+      // },
+    ],
+  },
+
+  // Add these product arrays to the services-corrected.ts file
+
+  // For CCTV category - add to productsDatabase
+  cctv: {
+    title: "CCTV Surveillance Systems",
+    subtitle:
+      "Professional security camera installations with HD and IP cameras",
+    icon: Camera,
+    products: [
+      {
+        id: "21",
+        name: "4-Camera HD CCTV Package (Basic Home Security)",
+        slug: "4-camera-hd-cctv-package-basic",
+        price: "₦150,000",
+        originalPrice: "₦180,000",
+        image: "/assets/images/cctv-4cam.jpeg",
+        images: [
+          "/assets/images/cctv-4cam.jpeg",
+          "/assets/images/cctv-4cam.jpeg",
+          "/assets/images/cctv-4cam.jpeg",
+        ],
+        rating: 4.7,
+        reviews: 89,
+        inStock: true,
+        badge: "Best Seller",
+        shortDescription:
+          "Complete 4-camera HD system perfect for small homes and apartments",
+        description:
+          "Our Basic Home Security package includes 4 high-definition cameras, a 4-channel DVR with 1TB storage, and professional installation. Perfect for monitoring key areas of your home including entrances, driveway, and backyard. Remote viewing via mobile app included.",
+        specs: [
+          "4 x 1080p HD Bullet Cameras",
+          "4-Channel DVR with 1TB HDD",
+          "Mobile app for remote viewing",
+          "Night vision up to 20 meters",
+          "Weatherproof outdoor cameras (IP66)",
+          "Professional installation included",
+          "3-month warranty on equipment",
+          "Basic training on system use",
+        ],
+        features: [
+          "Resolution: 1080p (2MP)",
+          "Recording: Continuous + Motion Detection",
+          "Storage: 1TB (30 days recording)",
+          "Night Vision: IR LEDs up to 20m",
+          "Viewing: Mobile App (Android/iOS)",
+          "Installation: Professional Team",
+        ],
+        warranty: "3-month equipment warranty, 1-year installation warranty",
+      },
+      {
+        id: "22",
+        name: "8-Camera HD/4K CCTV Package (Small Business)",
+        slug: "8-camera-hd-4k-cctv-package-business",
+        price: "₦280,000",
+        originalPrice: "₦320,000",
+        image: "/assets/images/cctv-8cam.jpeg",
+        images: [
+          "/assets/images/cctv-8cam.jpeg",
+          "/assets/images/cctv-8cam.jpeg",
+          "/assets/images/cctv-8cam.jpeg",
+        ],
+        rating: 4.9,
+        reviews: 124,
+        inStock: true,
+        badge: "Popular",
+        shortDescription:
+          "Professional 8-camera system for shops, offices, and medium-sized properties",
+        description:
+          "Upgrade to our Small Business package with 8 HD/4K cameras for comprehensive coverage. Includes 8-channel NVR with 2TB storage, remote monitoring, and advanced motion detection. Ideal for retail shops, offices, warehouses, and medium-sized residential properties.",
+        specs: [
+          "8 x 1080p/4K IP Cameras (mix available)",
+          "8-Channel NVR with 2TB HDD",
+          "Remote monitoring via mobile & web",
+          "Night vision up to 30 meters",
+          "Weatherproof IP67 rated cameras",
+          "Motion detection with email alerts",
+          "Professional installation & cable management",
+          "6-month warranty on all equipment",
+          "Comprehensive user training",
+        ],
+        features: [
+          "Resolution: Up to 4K (8MP)",
+          "Recording: Smart Motion Detection",
+          "Storage: 2TB (60 days recording)",
+          "Night Vision: IR LEDs up to 30m",
+          "PoE Support: Power over Ethernet",
+          "Remote Access: Cloud & Local",
+        ],
+        warranty: "6-month equipment warranty, 1-year installation warranty",
+      },
+      {
+        id: "23",
+        name: "16-Camera 4K IP CCTV Package (Enterprise)",
+        slug: "16-camera-4k-ip-cctv-package-enterprise",
+        price: "₦520,000",
+        originalPrice: "₦600,000",
+        image: "/assets/images/cctv-16cam.jpeg",
+        images: [
+          "/assets/images/cctv-16cam.jpeg",
+          "/assets/images/cctv-16cam.jpeg",
+          "/assets/images/cctv-16cam.jpeg",
+        ],
+        rating: 5.0,
+        reviews: 67,
+        inStock: true,
+        badge: "Premium",
+        shortDescription:
+          "Enterprise-grade surveillance for large properties, estates, and businesses",
+        description:
+          "Our Premium Enterprise package delivers professional-grade security with 16 high-resolution 4K IP cameras, advanced NVR with 4TB storage, and intelligent analytics. Perfect for large estates, hotels, hospitals, schools, and commercial complexes requiring comprehensive surveillance coverage.",
+        specs: [
+          "16 x 4K Ultra HD IP Cameras",
+          "16-Channel NVR with 4TB HDD",
+          "Advanced AI motion & person detection",
+          "Night vision up to 40 meters",
+          "PTZ camera options available",
+          "Weatherproof IP67/IP68 cameras",
+          "Multi-user remote access",
+          "Email & push notifications",
+          "Professional installation with cable trunking",
+          "12-month comprehensive warranty",
+          "Advanced training & documentation",
+          "Optional 24/7 monitoring support",
+        ],
+        features: [
+          "Resolution: 4K Ultra HD (8MP)",
+          "Recording: AI Smart Detection",
+          "Storage: 4TB (90+ days recording)",
+          "Night Vision: Starlight IR up to 40m",
+          "Analytics: Person/Vehicle Detection",
+          "Backup: Cloud storage option",
+        ],
+        warranty:
+          "12-month comprehensive warranty, 2-year installation warranty",
+      },
+      {
+        id: "24",
+        name: "Custom CCTV Solution (Tailored Package)",
+        slug: "custom-cctv-solution-tailored",
+        price: "From ₦100,000",
+        image: "/assets/images/cctv-custom.jpeg",
+        rating: 4.8,
+        reviews: 45,
+        inStock: true,
+        badge: "Flexible",
+        shortDescription:
+          "Build your own custom CCTV system based on your specific needs",
+        description:
+          "Need something different? We offer fully customizable CCTV solutions tailored to your exact requirements. Choose camera types, storage capacity, recording features, and monitoring options. Our experts will design the perfect security system for your property.",
+        specs: [
+          "Custom number of cameras (2-50+)",
+          "Mix of HD, 4K, or PTZ cameras",
+          "Flexible storage options (1TB-16TB)",
+          "Wired or wireless options",
+          "Indoor & outdoor cameras",
+          "Advanced analytics optional",
+          "Integration with existing systems",
+          "Scalable for future expansion",
+          "Professional site survey included",
+          "Customized installation plan",
+        ],
+        features: [
+          "Cameras: Custom selection",
+          "Resolution: HD to 4K options",
+          "Storage: Customizable capacity",
+          "Features: Based on requirements",
+          "Integration: Access control, alarms",
+          "Warranty: Based on package",
+        ],
+        warranty: "Warranty varies based on custom package",
+      },
+    ],
+  },
+
+  // For Wiring category - add to productsDatabase
+  wiring: {
+    title: "Electrical & House Wiring",
+    subtitle:
+      "Professional electrical installation services for residential and commercial properties",
+    icon: Cable,
+    products: [
+      {
+        id: "25",
+        name: "Residential Wiring Package (2-3 Bedroom)",
+        slug: "residential-wiring-2-3-bedroom",
+        price: "₦200,000",
+        originalPrice: "₦250,000",
+        image: "/assets/images/wiring-residential.jpeg",
+        images: [
+          "/assets/images/wiring-residential.jpeg",
+          "/assets/images/wiring-residential.jpeg",
+          "/assets/images/wiring-residential.jpeg",
+        ],
+        rating: 4.8,
+        reviews: 156,
+        inStock: true,
+        badge: "Best Seller",
+        shortDescription:
+          "Complete electrical wiring for 2-3 bedroom apartments",
+        description:
+          "Professional electrical wiring service for 2-3 bedroom apartments. Includes full conduit installation, distribution board setup, socket and switch installation, lighting circuits, and complete testing. All work done to Nigerian electrical safety standards.",
+        specs: [
+          "Complete conduit piping installation",
+          "Distribution board with circuit breakers",
+          "Socket outlets (20-30 points)",
+          "Light switches & fixtures wiring",
+          "Kitchen & bathroom circuits",
+          "Earthing & bonding system",
+          "Cable management & trunking",
+          "Testing & certification",
+          "Materials included",
+          "Licensed electricians",
+        ],
+        features: [
+          "Property Size: 2-3 Bedrooms",
+          "Socket Points: 20-30",
+          "Light Points: 15-20",
+          "Circuits: Separate for AC, Kitchen, etc",
+          "Cable: 2.5mm² & 4mm² copper",
+          "Timeline: 5-7 days",
+        ],
+        warranty: "2-year workmanship warranty",
+      },
+      {
+        id: "26",
+        name: "Commercial Wiring Package (Office/Shop)",
+        slug: "commercial-wiring-office-shop",
+        price: "₦500,000",
+        originalPrice: "₦600,000",
+        image: "/assets/images/wiring-commercial.jpeg",
+        images: [
+          "/assets/images/wiring-commercial.jpeg",
+          "/assets/images/wiring-commercial.jpeg",
+          "/assets/images/wiring-commercial.jpeg",
+        ],
+        rating: 4.9,
+        reviews: 89,
+        inStock: true,
+        badge: "Popular",
+        shortDescription:
+          "Professional commercial electrical installation for offices and retail spaces",
+        description:
+          "Comprehensive commercial wiring service designed for offices, shops, and retail spaces. Includes heavy-duty wiring, three-phase distribution, emergency lighting, data cable integration, and complete electrical testing. Built to handle commercial power loads.",
+        specs: [
+          "Heavy-duty conduit system",
+          "Three-phase distribution board",
+          "50-80 socket outlets",
+          "Emergency lighting circuits",
+          "Data & network cable integration",
+          "AC & equipment circuits",
+          "Steel trunking & cable trays",
+          "Fire alarm wiring ready",
+          "Safety switches & RCDs",
+          "Complete testing & documentation",
+          "NECA certified installation",
+        ],
+        features: [
+          "Property Type: Office/Shop",
+          "Phase: Single or Three-phase",
+          "Socket Points: 50-80",
+          "Load Capacity: Up to 100A",
+          "Emergency Lighting: Included",
+          "Timeline: 10-14 days",
+        ],
+        warranty: "3-year workmanship warranty",
+      },
+      {
+        id: "27",
+        name: "Industrial Wiring Solution (Factory/Warehouse)",
+        slug: "industrial-wiring-factory-warehouse",
+        price: "Custom Quote",
+        image: "/assets/images/wiring-industrial.jpeg",
+        rating: 5.0,
+        reviews: 34,
+        inStock: true,
+        badge: "Premium",
+        shortDescription:
+          "Heavy-duty industrial electrical installation for factories and warehouses",
+        description:
+          "Specialized industrial electrical wiring for factories, warehouses, and manufacturing facilities. Includes high-voltage systems, machinery connections, backup power integration, and comprehensive safety systems. Designed to meet industrial electrical standards.",
+        specs: [
+          "High-voltage system installation",
+          "Machinery & equipment wiring",
+          "Three-phase heavy-duty distribution",
+          "Industrial cable tray systems",
+          "Motor control circuits",
+          "Backup power integration",
+          "Safety shutdown systems",
+          "Emergency power circuits",
+          "Industrial lighting systems",
+          "Grounding & lightning protection",
+          "Complete electrical drawings",
+          "Testing & commissioning",
+        ],
+        features: [
+          "Property Type: Industrial",
+          "Voltage: Up to 415V three-phase",
+          "Load Capacity: Custom (100A-1000A+)",
+          "Certifications: NECA, ISO compliant",
+          "Safety Systems: Included",
+          "Timeline: Project-specific",
+        ],
+        warranty: "5-year workmanship warranty",
+      },
+      {
+        id: "28",
+        name: "Electrical Fault Diagnosis & Repair",
+        slug: "electrical-fault-diagnosis-repair",
+        price: "From ₦25,000",
+        image: "/assets/images/wiring-repair.jpeg",
+        rating: 4.7,
+        reviews: 203,
+        inStock: true,
+        badge: "Service",
+        shortDescription:
+          "Professional electrical troubleshooting and repair services",
+        description:
+          "Expert electrical fault finding and repair service. Our licensed electricians quickly diagnose and fix electrical issues including circuit failures, faulty sockets, tripping breakers, lighting problems, and complete rewiring when needed. Available for residential and commercial properties.",
+        specs: [
+          "Comprehensive fault diagnosis",
+          "Circuit testing & analysis",
+          "Socket & switch replacement",
+          "Breaker & fuse box repair",
+          "Lighting circuit repair",
+          "Cable fault location",
+          "Earthing system check",
+          "Power surge protection",
+          "Same-day service available",
+          "Emergency callout option",
+        ],
+        features: [
+          "Service Type: Diagnosis & Repair",
+          "Response Time: Within 24 hours",
+          "Coverage: Residential & Commercial",
+          "Equipment: Professional test gear",
+          "Electricians: Licensed & insured",
+          "Pricing: Transparent quotes",
+        ],
+        warranty: "90-day repair warranty",
+      },
+    ],
+  },
+
+  // For Fencing category - add to productsDatabase
+  fencing: {
+    title: "Electric & Security Fencing",
+    subtitle:
+      "High-voltage perimeter protection systems for homes, estates, and commercial properties",
+    icon: Shield,
+    products: [
+      {
+        id: "29",
+        name: "Residential Electric Fence (50-100 Meters)",
+        slug: "residential-electric-fence-50-100m",
+        price: "₦150,000",
+        originalPrice: "₦180,000",
+        image: "/assets/images/fence-residential.jpeg",
+        images: [
+          "/assets/images/fence-residential.jpeg",
+          "/assets/images/fence-residential.jpeg",
+          "/assets/images/fence-residential.jpeg",
+        ],
+        rating: 4.7,
+        reviews: 92,
+        inStock: true,
+        badge: "Best Seller",
+        shortDescription:
+          "Complete electric fencing for small to medium-sized homes",
+        description:
+          "Professional electric fence installation for residential properties covering 50-100 meters. Includes 6-line electric wire, 5KV energizer, mounting brackets, warning signs, and professional installation. Provides effective perimeter security with safe, non-lethal shock deterrent.",
+        specs: [
+          "Coverage: 50-100 meters",
+          "6-line electric wire system",
+          "5KV energizer unit",
+          "Steel mounting brackets",
+          "Warning signage included",
+          "Manual gate opener option",
+          "Basic alarm integration",
+          "Weatherproof installation",
+          "Professional setup & testing",
+          "User training included",
+        ],
+        features: [
+          "Wire Lines: 6 lines",
+          "Voltage: 5KV output",
+          "Power: 220V AC / Solar option",
+          "Shock: Non-lethal deterrent",
+          "Installation: 2-3 days",
+          "Maintenance: Minimal",
+        ],
+        warranty: "6-month warranty on energizer and components",
+      },
+      {
+        id: "30",
+        name: "Estate/Commercial Electric Fence (200+ Meters)",
+        slug: "estate-commercial-electric-fence-200m",
+        price: "₦400,000",
+        originalPrice: "₦480,000",
+        image: "/assets/images/fence-commercial.jpeg",
+        images: [
+          "/assets/images/fence-commercial.jpeg",
+          "/assets/images/fence-commercial.jpeg",
+          "/assets/images/fence-commercial.jpeg",
+        ],
+        rating: 4.9,
+        reviews: 67,
+        inStock: true,
+        badge: "Popular",
+        shortDescription:
+          "Heavy-duty electric fencing for estates and commercial properties",
+        description:
+          "Professional estate-grade electric fence system for properties over 200 meters. Features 8-line configuration, powerful 10KV energizer, advanced alarm integration, and optional solar power backup. Ideal for residential estates, schools, hotels, and commercial complexes.",
+        specs: [
+          "Coverage: 200+ meters",
+          "8-line electric wire system",
+          "10KV high-power energizer",
+          "Heavy-duty mounting system",
+          "Alarm system integration",
+          "Solar power backup option",
+          "Multiple zone control",
+          "Remote monitoring ready",
+          "Electric gate integration",
+          "Professional installation & testing",
+          "Comprehensive training",
+          "12-month warranty",
+        ],
+        features: [
+          "Wire Lines: 8 lines",
+          "Voltage: 10KV output",
+          "Power: AC + Solar backup",
+          "Zones: Multi-zone capability",
+          "Monitoring: Remote alerts",
+          "Installation: 5-7 days",
+        ],
+        warranty: "12-month comprehensive warranty",
+      },
+      {
+        id: "31",
+        name: "Industrial High-Security Fence (Custom)",
+        slug: "industrial-high-security-fence-custom",
+        price: "Custom Quote",
+        image: "/assets/images/fence-industrial.jpeg",
+        rating: 5.0,
+        reviews: 28,
+        inStock: true,
+        badge: "Premium",
+        shortDescription:
+          "Maximum security electric fencing for industrial and high-risk facilities",
+        description:
+          "Top-tier industrial electric fencing solution designed for factories, warehouses, government facilities, and high-security properties. Features multi-zone systems, 15KV+ energizers, CCTV integration, 24/7 monitoring capability, and advanced alarm systems. Custom-designed for each property.",
+        specs: [
+          "Coverage: Unlimited (custom)",
+          "Multi-zone electric fence system",
+          "15KV+ industrial energizer",
+          "Reinforced mounting system",
+          "CCTV camera integration",
+          "Advanced alarm & siren systems",
+          "Solar + battery backup",
+          "Remote monitoring & control",
+          "Access control integration",
+          "Perimeter lighting option",
+          "24/7 monitoring support option",
+          "Complete maintenance package",
+          "24-month premium warranty",
+        ],
+        features: [
+          "Voltage: 15KV+ adjustable",
+          "Zones: Unlimited zones",
+          "Power: Redundant power systems",
+          "Integration: Full security ecosystem",
+          "Monitoring: 24/7 capability",
+          "Timeline: Project-specific",
+        ],
+        warranty: "24-month comprehensive warranty, optional extended support",
+      },
+      {
+        id: "32",
+        name: "Electric Fence Maintenance & Repair",
+        slug: "electric-fence-maintenance-repair",
+        price: "From ₦20,000",
+        image: "/assets/images/fence-maintenance.jpeg",
+        rating: 4.6,
+        reviews: 118,
+        inStock: true,
+        badge: "Service",
+        shortDescription:
+          "Professional maintenance and repair services for existing electric fences",
+        description:
+          "Expert maintenance and repair service for all types of electric fencing systems. Includes fault diagnosis, wire replacement, energizer repair/replacement, vegetation management, and system testing. Keep your electric fence working at peak performance with regular maintenance.",
+        specs: [
+          "Complete system inspection",
+          "Fault finding & diagnosis",
+          "Wire replacement & repair",
+          "Energizer testing & repair",
+          "Insulator replacement",
+          "Vegetation trimming",
+          "Voltage testing & optimization",
+          "Battery replacement (solar systems)",
+          "Alarm system check",
+          "Performance report provided",
+        ],
+        features: [
+          "Service Type: Maintenance & Repair",
+          "Response Time: Within 48 hours",
+          "Coverage: All fence types",
+          "Emergency Service: Available",
+          "Parts: Genuine replacements",
+          "Report: Full system assessment",
+        ],
+        warranty: "90-day service warranty",
+      },
+    ],
+  },
+};
+
+// OLD FORMAT - For backward compatibility with existing components
+export const products: Record<ProductCategory, ProductData> = {
+  panels: {
+    title: "Solar Panels",
+    subtitle:
+      "High-performance solar panels designed for maximum energy output and long-term durability.",
+    cta: "View More",
+    link: "/products/felicity-solar-panels",
+    featured: {
+      name: "Jinko 610W Half-Cut Bifacial Solar Panel",
+      image: "/assets/images/Jinko-610w-Solar-Panels.jpeg",
+      description:
+        "The Jinko 610W Half-Cut Bifacial Solar Panel delivers exceptional efficiency and increased power generation using advanced bifacial technology. Designed for commercial and high-capacity residential systems, it captures sunlight from both sides to maximize energy yield and long-term performance.",
+      specs: [
+        "610W high power output",
+        "Advanced half-cut cell technology",
+        "Bifacial design for dual-side energy generation",
+        "High efficiency with reduced power loss",
+        "Durable frame for harsh weather conditions",
+        "Ideal for large residential and commercial installations",
+      ],
+    },
+    additional: {
+      name: "Jinko 610W Half-Cut Bifacial Solar Panel",
+      tag: "Premium High Power",
+    },
+  },
+
+  batteries: {
+    title: "Solar Batteries",
+    subtitle:
+      "High-capacity lithium battery systems built for reliable energy storage and long-term performance.",
+    cta: "View More",
+    link: "/products/felicity-solar-batteries",
+    featured: {
+      name: "15kWh Cworth Lithium Battery",
+      image: "/assets/images/battery.jpeg",
+      description:
+        "The 15kWh Cworth Lithium Battery is a high-capacity energy storage solution designed for residential and commercial solar systems. Built with advanced lithium technology, it delivers stable power output, faster charging, deep discharge capability, and long service life for uninterrupted energy supply.",
+      specs: [
+        "15kWh high energy storage capacity",
+        "Advanced lithium battery technology",
+        "Deep cycle performance with high efficiency",
+        "Fast charging and low self-discharge rate",
+        "Long lifespan with intelligent BMS protection",
+        "Ideal for hybrid and off-grid solar systems",
+      ],
+    },
+    additional: {
+      name: "Cworth Lithium Battery Series",
+      tag: "High Capacity",
+    },
+  },
+
+  inverters: {
+    title: "Solar Inverters",
+    subtitle:
+      "Smart hybrid inverters engineered for efficient solar power management.",
+    cta: "View More",
+    link: "/products/felicity-solar-inverter",
+    featured: {
+      name: "Felicity 5KVA Hybrid Inverter",
+      image: "/assets/images/Inverter.jpeg",
+      description:
+        "The Felicity 5KVA Hybrid Inverter is a powerful and intelligent energy management solution designed for residential and small commercial solar systems. With advanced MPPT technology, seamless switching between solar, battery, and grid power, and pure sine wave output, it ensures stable and uninterrupted electricity supply.",
+      specs: [
+        "5KVA rated output capacity",
+        "Advanced MPPT solar charge controller",
+        "Hybrid functionality (Solar + Battery + Grid)",
+        "Pure sine wave output for sensitive appliances",
+        "LCD display with real-time monitoring",
+        "Built-in protection against overload & short circuit",
+      ],
+    },
+    additional: {
+      name: "Felicity Hybrid Inverter Series",
+      tag: "Hybrid Smart",
+    },
+  },
+
+  controllers: {
+    title: "Charge Controllers",
+    subtitle:
+      "Advanced MPPT charge controllers designed for maximum solar efficiency and battery protection.",
+    cta: "View More",
+    link: "/products/felicity-charge-controller",
+    featured: {
+      name: "Felicity 80A MPPT Charge Controller",
+      image: "/assets/images/controller.jpeg",
+      description:
+        "The Felicity 80A MPPT Charge Controller intelligently tracks the maximum power point of your solar panels to ensure optimal charging performance. Built for reliability and safety, it enhances energy harvest while protecting your battery system from damage.",
+      specs: [
+        "80A maximum charging current",
+        "Advanced MPPT tracking technology",
+        "High conversion efficiency",
+        "LCD display with real-time monitoring",
+        "Overcharge, short-circuit & reverse polarity protection",
+        "Compatible with lithium and lead-acid batteries",
+      ],
+    },
+    additional: {
+      name: "PWM Controller Series",
+      tag: "Entry Level",
+    },
+  },
+
+  streetlights: {
+    title: "Solar Street Lights",
+    subtitle:
+      "Illuminate your streets with sustainable, all-in-one solar lighting.",
+    cta: "View More",
+    link: "/products/felicity-solar-street-light",
+    featured: {
+      name: "Felicity All-in-One Solar Street Light",
+      image: "/assets/images/street-lights.jpeg",
+      description:
+        "Complete solar street lighting solution with integrated panel, battery, and LED. Automatic operation from dusk to dawn with motion sensor options.",
+      specs: [
+        "All-in-one integrated design",
+        "Automatic dusk-to-dawn operation",
+        "Motion sensor technology",
+        "IP65 weatherproof rating",
+        "Up to 12 hours runtime",
+      ],
+    },
+    additional: {
+      name: "Smart Street Light",
+      tag: "IoT Enabled",
+    },
+  },
+
+  cctv: {
+    title: "CCTV Surveillance Systems",
+    subtitle:
+      "Advanced security camera installations for homes and businesses.",
+    cta: "Request CCTV Installation",
+    link: "/services/cctv-installation",
+    featured: {
+      name: "HD & IP CCTV Camera Systems",
+      image: "/assets/images/cctv.jpeg",
+      description:
+        "Professional CCTV installation with HD and IP camera systems. Remote monitoring, night vision, motion detection, and secure recording for homes, offices, and commercial properties.",
+      specs: [
+        "HD & 4K camera options",
+        "Night vision capability",
+        "Remote mobile monitoring",
+        "Motion detection alerts",
+        "Professional installation service",
+      ],
+    },
+    additional: {
+      name: "Smart Surveillance Package",
+      tag: "Secure",
+    },
+  },
+
+  wiring: {
+    title: "Electrical & House Wiring",
+    subtitle: "Safe and professional electrical wiring services.",
+    cta: "Book Wiring Service",
+    link: "/services/house-wiring",
+    featured: {
+      name: "Complete Building Electrical Wiring",
+      image: "/assets/images/house-wiring.jpeg",
+      description:
+        "Certified electrical wiring services for new and existing buildings. We handle conduit piping, panel installation, socket wiring, and full electrical setup with safety compliance.",
+      specs: [
+        "Full building wiring",
+        "Distribution board installation",
+        "Safe cable management",
+        "Electrical fault troubleshooting",
+        "Professional certified technicians",
+      ],
+    },
+    additional: {
+      name: "Maintenance & Repairs",
+      tag: "Reliable",
+    },
+  },
+
+  fencing: {
+    title: "Electric & Security Fencing",
+    subtitle: "Perimeter protection solutions for maximum security.",
+    cta: "Secure Your Property",
+    link: "/services/electric-fencing",
+    featured: {
+      name: "High-Voltage Security Fencing",
+      image: "/assets/images/electric-fences.jpeg",
+      description:
+        "Modern electric fencing solutions designed to protect homes, estates, and commercial properties. Durable installation with long-lasting performance.",
+      specs: [
+        "High-voltage perimeter protection",
+        "Weather-resistant materials",
+        "Low maintenance system",
+        "Alarm integration support",
+        "Professional installation",
+      ],
+    },
+    additional: {
+      name: "Perimeter Security",
+      tag: "High Security",
+    },
+  },
+};
+
+// Helper functions
+export const getProductsByCategory = (category: ProductCategory): Product[] => {
+  return productsDatabase[category]?.products || [];
+};
+
+export const getProduct = (
+  category: ProductCategory,
+  slug: string,
+): Product | undefined => {
+  return productsDatabase[category]?.products.find((p) => p.slug === slug);
+};
