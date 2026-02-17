@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"; // ✅ import Link
 import { Button } from "@/components/ui/button";
 import { COMPANY_NAME } from "@/lib/constant";
 
@@ -18,7 +19,7 @@ const CTASection: React.FC = () => (
             className="bg-white text-green-700 hover:bg-gray-100 text-base md:text-lg px-6 md:px-8"
             asChild
           >
-            <a href="/contact-us">Contact Us Today</a>
+            <Link to="/contact-us">Contact Us Today</Link>{" "}
           </Button>
           <Button
             size="lg"
@@ -26,7 +27,7 @@ const CTASection: React.FC = () => (
             className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 text-base md:text-lg px-6 md:px-8"
             asChild
           >
-            <a href="/products">Explore Solutions</a>
+            <Link to="/products">Explore Solutions</Link>{" "}
           </Button>
         </div>
       </div>

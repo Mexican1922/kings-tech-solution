@@ -96,7 +96,7 @@ export const milestones: Milestone[] = [
     year: "2026",
     title: "Growing Trust",
     description:
-      "Served over 100+ satisfied customers and established partnerships with certified installers across Nigeria.",
+      "Served over 50+ satisfied customers and established partnerships with certified installers across Nigeria.",
   },
 ];
 
@@ -113,8 +113,8 @@ export const team: TeamMember[] = [
 export const stats: Stat[] = [
   { number: "4+", label: "Years of Excellence" },
   { number: "12+", label: "Service Centers" },
-  { number: "100+", label: "Happy Customers" },
-  { number: "60+", label: "Certified Installers" },
+  { number: "50+", label: "Happy Customers" },
+  { number: "15+", label: "Certified Installers" },
   { number: "95%", label: "Customer Satisfaction" },
   { number: "24/7", label: "Support Available" },
 ];
