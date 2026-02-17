@@ -78,7 +78,7 @@ export const milestones: Milestone[] = [
     year: "2023",
     title: "Company Founded",
     description:
-      "KingsTech-Solution was established in Lagos, Nigeria with a vision to provide reliable solar energy solutions to homes and businesses.",
+      "Kings Tech Solutions was established in Lagos, Nigeria with a vision to provide reliable solar energy solutions to homes and businesses.",
   },
   {
     year: "2024",
@@ -106,12 +106,12 @@ export const team: TeamMember[] = [
     role: "Founder & Chief Executive Officer",
     image: "/assets/images/ceo.jpeg",
     description:
-      "Visionary leader dedicated to powering Nigeria with reliable and sustainable solar energy solutions.",
+      "Visionary leader dedicated to providing reliable energy and security solutions across Nigeria, including solar systems, CCTV, electric fencing, and electrical installations.",
   },
 ];
 
 export const stats: Stat[] = [
-  { number: "2+", label: "Years of Excellence" },
+  { number: "4+", label: "Years of Excellence" },
   { number: "12+", label: "Service Centers" },
   { number: "100+", label: "Happy Customers" },
   { number: "60+", label: "Certified Installers" },

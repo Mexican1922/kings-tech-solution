@@ -7,9 +7,12 @@ interface Stat {
 }
 
 const WHATSAPP_NUMBER = "2348137306375";
-const WHATSAPP_MESSAGE =
-  "Hi KingsTech-Solution, I'm interested in your services";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const WHATSAPP_MESSAGE_QUOTE =
+  "Hi KingsTech-Solution, I need a free quote for your services.";
+const WHATSAPP_MESSAGE_CHAT =
+  "Hi KingsTech-Solution, I have a question about your services.";
+const WHATSAPP_URL_QUOTE = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE_QUOTE)}`;
+const WHATSAPP_URL_CHAT = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE_CHAT)}`;
 
 const STATS: Stat[] = [
   { value: "2023", label: "Established" },
@@ -42,13 +45,16 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 font-maven">
+            {/* Get a Free Quote – now opens WhatsApp with quote message */}
             <Button
               size="lg"
               className="bg-white text-green-700 hover:bg-gray-100 text-lg px-8 py-6 group shadow-lg hover:shadow-xl transition-all"
               asChild
             >
               <a
-                href="/get-a-free-quote"
+                href={WHATSAPP_URL_QUOTE}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center"
               >
                 <FileText className="mr-2 h-5 w-5" />
@@ -64,7 +70,7 @@ const CTASection = () => {
               asChild
             >
               <a
-                href={WHATSAPP_URL}
+                href={WHATSAPP_URL_CHAT}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center"

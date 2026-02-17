@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button"; // ✅ added
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, MessageCircle } from "lucide-react"; // ✅ added MessageCircle
 import Autoplay from "embla-carousel-autoplay";
 
 interface Testimonial {
@@ -23,14 +24,20 @@ interface Stat {
   label: string;
 }
 
+// ✅ WhatsApp review link
+const WHATSAPP_NUMBER = "2348137306375";
+const REVIEW_MESSAGE =
+  "Hi KingsTech-Solution, I'd like to leave a review about your services.";
+const REVIEW_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(REVIEW_MESSAGE)}`;
+
 const TESTIMONIALS: Testimonial[] = [
   {
     name: "Ola O.",
-    role: "StackDev Limited",
+    role: "Founder, StackDev Limited",
     image:
       "https://www.shutterstock.com/image-photo/portrait-african-american-man-architect-600nw-1665468736.jpg",
     rating: 5,
-    text: "As a startup founder working remotely, power stability is critical. KingsTech-Solution's inverter and battery combo has been flawless. I've recommended them to my entire tech circle.",
+    text: "As a tech startup, we can't afford downtime. Kings Tech Solutions installed a complete solar system with inverter and lithium batteries, and it's been flawless. I've recommended them to my entire tech circle.",
   },
   {
     name: "Grace N.",
@@ -38,7 +45,7 @@ const TESTIMONIALS: Testimonial[] = [
     image:
       "https://everygirlafrica.org/wp-content/uploads/2022/03/first_african_woman_5f572eac88260.jpeg",
     rating: 5,
-    text: "We installed KingsTech-Solution panels and lights across five rural schools. The impact has been incredible—students now study after dark, and teachers feel safer. Quality meets purpose.",
+    text: "Kings Tech Solutions equipped five rural schools with solar panels and efficient lighting. Students now study after dark, and teachers feel safer. Their commitment to quality and purpose is unmatched.",
   },
   {
     name: "Chijioke M.",
@@ -46,36 +53,36 @@ const TESTIMONIALS: Testimonial[] = [
     image:
       "https://media.istockphoto.com/id/1366582232/photo/shot-of-a-mature-businessman-using-his-smartphone-to-send-a-text-message-while-drinking-coffee.jpg?s=612x612&w=0&k=20&c=o9XK4P6iW1drP9DBdGRXO-Pf9JhhH-R8nTco9WbTtlg=",
     rating: 5,
-    text: "KingsTech-Solution has been our go-to partner for solar solutions across all our residential projects. Their solar panels and inverters are highly efficient, and clients love the cost savings. It's a win-win!",
+    text: "Kings Tech Solutions has been our go-to partner for all residential projects. From solar panels and inverters to complete house wiring, their work is top-notch. Clients love the savings and reliability.",
   },
   {
     name: "Mr. Adeola I.",
-    role: "Lagos State, Nigeria",
+    role: "Business Owner, Lagos",
     image: "https://images.pexels.com/photos/5398958/pexels-photo-5398958.jpeg",
     rating: 5,
-    text: "Switching to KingsTech-Solution was the best decision for my business. Our power costs have dropped by over 60%, and the solar battery performance is unmatched. Reliable products, top-notch support!",
+    text: "Switching to Kings Tech Solutions for our office solar and CCTV needs was the best decision. Power costs dropped by over 60%, and the security system gives us peace of mind. Excellent support!",
   },
   {
     name: "Tunde A.",
-    role: "Abuja, Nigeria",
+    role: "Homeowner, Abuja",
     image: "https://images.pexels.com/photos/936117/pexels-photo-936117.jpeg",
     rating: 5,
-    text: "We've had constant power since installing KingsTech-Solution's panels and inverter system. The installation was seamless, and the team was incredibly professional. I finally enjoy peace of mind!",
+    text: "Kings Tech Solutions handled our house wiring and installed a 5KVA inverter system. The team was professional, and now we enjoy 24/7 power without generator noise. Highly recommended!",
   },
   {
     name: "Dominic E.",
-    role: "Edo State, Nigeria",
+    role: "Community Leader, Edo State",
     image: "https://images.pexels.com/photos/3206080/pexels-photo-3206080.jpeg",
     rating: 5,
-    text: "KingsTech-Solution provided our community with solar floor lights and battery storage, and it has transformed our nights—no more darkness or security concerns. Their products are built to last.",
+    text: "Our community installed solar street lights from Kings Tech Solutions. The transformation is incredible—no more darkness, improved security, and children can play safely at night. Built to last!",
   },
   {
     name: "Engr. Boma K.",
-    role: "CareMed Hospital",
+    role: "Facility Manager, CareMed Hospital",
     image:
       "https://img.freepik.com/premium-photo/portrait-african-american-man-as-software-engineer-looking-camera-while-posing-workplace-wi_236854-44703.jpg",
     rating: 5,
-    text: "Our hospital switched to KingsTech-Solution's solar charge controllers and backup systems. Even during outages, we stay powered. Their technology is efficient and dependable—truly life-saving.",
+    text: "CareMed Hospital relies on Kings Tech Solutions for our backup power and electric fencing. Even during grid outages, our critical equipment stays online. Reliable, efficient, and truly life-saving.",
   },
 ];
 
@@ -200,6 +207,28 @@ const TestimonialsSection = () => {
         </div>
 
         <StatsBox stats={STATS} />
+
+        {/* ✅ Write a Review CTA */}
+        <div className="text-center mt-12">
+          <p className="text-gray-600 mb-4 font-maven">
+            Share your experience with us – we'd love to hear from you!
+          </p>
+          <Button
+            size="lg"
+            className="bg-green-600 hover:bg-green-700 text-white"
+            asChild
+          >
+            <a
+              href={REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Write a Review on WhatsApp
+            </a>
+          </Button>
+        </div>
       </div>
     </section>
   );

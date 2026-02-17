@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ArrowRight, Award, Users, Zap, Shield } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -90,7 +91,7 @@ const AboutSection = () => {
                 About us
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-4">
-                KINGSTECH-SOLUTION
+                KINGS TECH SOLUTIONS
               </h2>
               <div className="w-20 h-1 bg-green-600 rounded-full" />
             </div>
@@ -114,7 +115,7 @@ const AboutSection = () => {
                 client’s needs.
               </p>
               <p className="text-lg">
-                At Kings Tech Solutions, we don’t just install systems — we
+                At Kings Tech Solutions, we don’t just install systems we
                 install peace of mind. Every project is handled with
                 professionalism, technical expertise, and attention to detail,
                 ensuring long-term performance and customer satisfaction.
@@ -133,10 +134,10 @@ const AboutSection = () => {
                 className="bg-green-600 hover:bg-green-700 text-white group"
                 asChild
               >
-                <a href="/about-us" className="flex items-center font-maven">
+                <Link to="/about-us" className="flex items-center font-maven">
                   Read more
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </Button>
             </div>
           </div>

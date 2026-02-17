@@ -5,6 +5,16 @@ import Footer from "@/components/layout/Footer";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
+import {
+  COMPANY_EMAIL,
+  COMPANY_PHONE,
+  COMPANY_PHONE_ALT,
+  COMPANY_ADDRESS,
+} from "@/lib/constant";
+
+const WHATSAPP_NUMBER = "2348137306375";
+const WHATSAPP_MESSAGE = "Hi Kings Tech Solutions, I have a question";
+const WHATSAPP_URL = `https://api.whatsapp.com/send/?text=${encodeURIComponent(WHATSAPP_MESSAGE)}&phone=${WHATSAPP_NUMBER}`;
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -17,9 +27,9 @@ const ContactPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+    // Handle form submission – you can integrate with an API here
     console.log("Form submitted:", formData);
-    // You can add API call here
+    alert("Thank you for your message! We'll get back to you soon.");
   };
 
   const handleChange = (
@@ -35,8 +45,8 @@ const ContactPage = () => {
     <>
       <Header />
       <main className="min-h-screen bg-white">
+        {/* Hero Section */}
         <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center bg-gradient-to-br from-green-700 via-green-600 to-green-500">
-          {/* Pattern Overlay */}
           <div className="absolute inset-0 opacity-10">
             <div
               className="absolute inset-0"
@@ -50,13 +60,15 @@ const ContactPage = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
               Get in Touch
             </h1>
-            <p className="text-xl md:text-2xl text-green-50 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-green-50 max-w-2xl mx-auto font-maven">
               Have questions? Our team is ready to help with demos, system
               requirements, or product inquiries.
             </p>
           </div>
         </section>
-        <section className="bg-white border-b py-4">
+
+        {/* Breadcrumb */}
+        <section className="bg-white border-b py-4 font-maven">
           <div className="container mx-auto px-4">
             <div className="flex items-center gap-2 text-sm">
               <Link
@@ -88,7 +100,6 @@ const ContactPage = () => {
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* First Name */}
                     <div>
                       <label
                         htmlFor="firstName"
@@ -107,7 +118,6 @@ const ContactPage = () => {
                       />
                     </div>
 
-                    {/* Last Name */}
                     <div>
                       <label
                         htmlFor="lastName"
@@ -126,7 +136,6 @@ const ContactPage = () => {
                       />
                     </div>
 
-                    {/* Phone Number */}
                     <div>
                       <label
                         htmlFor="phone"
@@ -145,7 +154,6 @@ const ContactPage = () => {
                       />
                     </div>
 
-                    {/* Email */}
                     <div>
                       <label
                         htmlFor="email"
@@ -164,7 +172,6 @@ const ContactPage = () => {
                       />
                     </div>
 
-                    {/* Message */}
                     <div>
                       <label
                         htmlFor="message"
@@ -183,7 +190,6 @@ const ContactPage = () => {
                       />
                     </div>
 
-                    {/* Submit Button */}
                     <Button
                       type="submit"
                       className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-4 text-lg"
@@ -201,9 +207,9 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        kingstechsolutions01@gmail.com
+                        {COMPANY_EMAIL}
                       </h3>
-                      <p className="text-gray-600">Send an Email</p>
+                      <p className="text-gray-600 font-maven">Send an Email</p>
                     </div>
                   </div>
 
@@ -214,9 +220,9 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        +2348137306375, +2349092193041
+                        {COMPANY_PHONE}, {COMPANY_PHONE_ALT}
                       </h3>
-                      <p className="text-gray-600">Make a Call</p>
+                      <p className="text-gray-600 font-maven">Make a Call</p>
                     </div>
                   </div>
 
@@ -227,23 +233,23 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        No.4, Ola Sheu Street, Alimosho, Iyana Ipaja, Lagos,
-                        Nigeria
+                        {COMPANY_ADDRESS}
                       </h3>
-                      <p className="text-gray-600">Office Address</p>
+                      <p className="text-gray-600 font-maven">Office Address</p>
                     </div>
                   </div>
 
+                  {/* Map */}
                   <div className="mt-8 rounded-lg overflow-hidden border-2 border-gray-200">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.2799266934467!2d3.2850!3d6.4598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjcnMzUuMyJOIDPCsDE3JzA2LjAiRQ!5e0!3m2!1sen!2sng!4v1234567890"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.2799266934467!2d3.2950!3d6.6160!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzcnMDAuMCJOIDPCsDE3JzQ2LjAiRQ!5e0!3m2!1sen!2sng!4v1234567890"
                       width="100%"
                       height="300"
                       style={{ border: 0 }}
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Felicity Solar Office Location"
+                      title="Kings Tech Solutions Office Location"
                     />
                   </div>
                 </div>
@@ -252,14 +258,13 @@ const ContactPage = () => {
           </div>
         </section>
 
-        {/* Additional CTA Section */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Prefer to Chat?
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-gray-600 mb-8 font-maven">
                 Get instant responses to your questions via WhatsApp
               </p>
               <Button
@@ -267,7 +272,7 @@ const ContactPage = () => {
                 asChild
               >
                 <a
-                  href="https://api.whatsapp.com/send/?text=Hi%20Felicity%20Solar,%20I%20have%20a%20question&phone=2348171479561"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2"

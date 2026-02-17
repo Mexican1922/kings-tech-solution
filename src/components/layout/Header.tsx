@@ -29,7 +29,6 @@ const NAVIGATION_LINKS: NavLink[] = [
   {
     name: "Products",
     dropdown: [
-      // Simple link to the new overview page
       { name: "All Products", href: "/products" },
       {
         group: "Solar Products",
@@ -130,7 +129,6 @@ const DesktopDropdown: React.FC<DesktopDropdownProps> = ({
           className="absolute left-1/2 -translate-x-1/2 top-full mt-4 bg-white rounded-2xl shadow-xl border border-gray-100 z-50"
         >
           {isProjects ? (
-            // Projects dropdown (unchanged)
             <div className="w-[500px] max-w-[60vw] p-8">
               <h3 className="text-xl font-bold text-green-600 mb-3">
                 Trusted Across Cities
@@ -164,9 +162,7 @@ const DesktopDropdown: React.FC<DesktopDropdownProps> = ({
               </div>
             </div>
           ) : (
-            // Products dropdown with "All Products" link + grouped items
             <div className="w-[500px] max-w-[40vw] p-10">
-              {/* Render any simple items (like "All Products") at the top */}
               {link.dropdown.some((item) => !isGroupedDropdownItem(item)) && (
                 <div className="mb-6 pb-4 border-b border-gray-200">
                   {link.dropdown.map((item) => {
@@ -187,7 +183,6 @@ const DesktopDropdown: React.FC<DesktopDropdownProps> = ({
                   })}
                 </div>
               )}
-              {/* Grid for grouped items */}
               <div className="grid grid-cols-2 gap-12">
                 {link.dropdown.map((item) => {
                   if (isGroupedDropdownItem(item)) {
@@ -292,7 +287,6 @@ const MobileNav: React.FC<MobileNavProps> = ({ links, onLinkClick }) => {
                         </div>
                       );
                     } else {
-                      // Simple item (like "All Products")
                       return (
                         <Link
                           key={item.name}
@@ -368,15 +362,18 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
+          {" "}
+          {/* Increased header height */}
           <Link to="/" className="flex items-center shrink-0">
-            <img
-              src="/logo.svg"
-              alt="KingsTech-Solutions Logo"
-              className="h-20 md:h-20 w-auto drop-shadow-lg"
-            />
+            <div className="p-1 rounded-md">
+              <img
+                src="/logo.svg"
+                alt="KingsTech-Solutions Logo"
+                className="h-[120px] md:h-[138px] w-auto" /* Larger logo */
+              />
+            </div>
           </Link>
-
           <nav className="hidden lg:flex items-center gap-8 font-maven text-lg">
             {NAVIGATION_LINKS.map((link) => {
               if (isSimpleLink(link)) {
@@ -406,7 +403,6 @@ const Header = () => {
               }
             })}
           </nav>
-
           <div className="hidden lg:block">
             <Button
               className="bg-green-600 hover:bg-green-700 text-white"
@@ -417,7 +413,6 @@ const Header = () => {
               </a>
             </Button>
           </div>
-
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button

@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -123,7 +125,7 @@ const FAQSection = () => {
               className="border-green-600 text-green-600 hover:bg-green-50"
               asChild
             >
-              <a href="/contact-us">Contact Support</a>
+              <Link to="/contact-us">Contact Support</Link>
             </Button>
           </div>
         </div>

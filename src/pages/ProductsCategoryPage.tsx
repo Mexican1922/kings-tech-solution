@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -14,6 +15,7 @@ import { COMPANY_NAME } from "@/lib/constant";
 
 const ProductsCategoryPage = () => {
   const { category, serviceType } = useParams();
+  const [customRequest, setCustomRequest] = useState("");
 
   const isServiceRoute = window.location.pathname.startsWith("/services");
 
@@ -38,6 +40,45 @@ const ProductsCategoryPage = () => {
 
   const categoryData = productsDatabase[categoryId];
   const products = getProductsByCategory(categoryId);
+
+  const whatsappNumber = "2348137306375";
+
+  // Category‑specific suggestions for the custom request
+  const categorySuggestions: Record<ProductCategory, string[]> = {
+    panels: ["300W Mono", "450W Poly", "500W Bifacial", "600W"],
+    batteries: ["Lithium 200Ah", "Gel 150Ah", "AGM 100Ah", "2V 1000Ah"],
+    inverters: ["3KVA Hybrid", "5KVA Off‑grid", "10KVA 3‑Phase", "1.5KVA"],
+    controllers: ["30A PWM", "60A MPPT", "80A MPPT", "100A"],
+    streetlights: ["20W All‑in‑one", "30W Split", "50W", "100W"],
+    // Services – not used because section only shows for products
+    cctv: [],
+    wiring: [],
+    fencing: [],
+  };
+
+  const categoryPlaceholders: Record<ProductCategory, string> = {
+    panels: "e.g., 500W Mono",
+    batteries: "e.g., Lithium 200Ah",
+    inverters: "e.g., 5KVA Hybrid",
+    controllers: "e.g., 60A MPPT",
+    streetlights: "e.g., 30W All‑in‑one",
+    cctv: "",
+    wiring: "",
+    fencing: "",
+  };
+
+  const suggestions = categorySuggestions[categoryId] || [];
+  const placeholder =
+    categoryPlaceholders[categoryId] || "Enter your requirements";
+
+  const handleCustomRequest = () => {
+    if (!customRequest) return;
+    const message = `Hi ${COMPANY_NAME}, I need a custom ${categoryData.title} of ${customRequest}. Can you recommend a suitable product?`;
+    const url = `https://api.whatsapp.com/send/?text=${encodeURIComponent(
+      message,
+    )}&phone=${whatsappNumber}`;
+    window.open(url, "_blank");
+  };
 
   if (!categoryData) {
     return (
@@ -90,7 +131,6 @@ const ProductsCategoryPage = () => {
             </p>
           </div>
         </section>
-
         {/* Breadcrumb */}
         <section className="bg-white py-4 border-b">
           <div className="container mx-auto px-4">
@@ -111,7 +151,6 @@ const ProductsCategoryPage = () => {
             </div>
           </div>
         </section>
-
         {/* Products / Services Grid */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -138,7 +177,7 @@ const ProductsCategoryPage = () => {
                     <Link
                       to={
                         isServiceRoute
-                          ? "#" // No detail pages for services yet
+                          ? "#"
                           : `/products/${category}/${product.slug}`
                       }
                     >
@@ -277,6 +316,74 @@ const ProductsCategoryPage = () => {
             </div>
           </div>
         </section>
+        {/* Request Custom Size Section – Only for product pages */}
+        {!isServiceRoute && (
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  Need a Custom {categoryData.title} or Installation?
+                </h2>
+                <p className="text-lg text-gray-600 mb-8 font-maven">
+                  Tell us your requirements, and we'll recommend the perfect
+                  solution, or find a certified installer near you.
+                </p>
+                <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                  <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                    <input
+                      type="text"
+                      placeholder={placeholder}
+                      value={customRequest}
+                      onChange={(e) => setCustomRequest(e.target.value)}
+                      className="flex-1 px-6 py-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-600 text-lg"
+                    />
+                    <Button
+                      onClick={handleCustomRequest}
+                      disabled={!customRequest}
+                      className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg"
+                    >
+                      Request Quote
+                    </Button>
+                  </div>
+                  {suggestions.length > 0 && (
+                    <div className="flex flex-wrap gap-3 justify-center mb-6">
+                      {suggestions.map((suggestion) => (
+                        <button
+                          key={suggestion}
+                          onClick={() => setCustomRequest(suggestion)}
+                          className="px-4 py-2 bg-white border-2 border-gray-200 rounded-full text-gray-700 hover:border-green-600 hover:text-green-600 transition-colors"
+                        >
+                          {suggestion}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                  {/* New installer link */}
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <p className="text-gray-600 mb-4 font-maven">
+                      Already know what you need? Find a professional installer
+                      in your area.
+                    </p>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="border-green-600 text-green-600 hover:bg-green-50"
+                      asChild
+                    >
+                      <Link
+                        to="/find-installers"
+                        className="flex items-center justify-center"
+                      >
+                        Find an Installer Near You
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Why Choose Us */}
         <section className="py-16 bg-white">
@@ -346,7 +453,6 @@ const ProductsCategoryPage = () => {
             </div>
           </div>
         </section>
-
         {/* CTA */}
         <section className="py-16 bg-gradient-to-br from-green-600 to-green-700">
           <div className="container mx-auto px-4 text-center">

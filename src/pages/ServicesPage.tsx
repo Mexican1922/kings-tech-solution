@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -15,11 +16,14 @@ import {
   Camera,
   Cable,
   Zap,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { COMPANY_NAME, COMPANY_EMAIL, COMPANY_PHONE } from "@/lib/constant";
 
 const ServicesPage = () => {
   const { serviceType } = useParams();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const services = {
     "cctv-installation": {
@@ -28,7 +32,14 @@ const ServicesPage = () => {
       tagline: "24/7 Security Monitoring for Your Property",
       description:
         "Professional CCTV installation services with HD and IP camera systems. Protect your home, office, or business with advanced surveillance technology, remote monitoring, and crystal-clear recording.",
-      heroImage: "/assets/images/cctv.jpeg",
+      heroImage: "/assets/images/city-cctv.jpeg",
+
+      gallery: [
+        "/assets/images/cctv1.jpeg",
+        "/assets/images/cctv2.jpeg",
+        "/assets/images/cctv3.jpeg",
+        "/assets/images/cctv4.jpeg",
+      ],
       features: [
         "HD & 4K Camera Options",
         "Day & Night Vision Capability",
@@ -138,6 +149,8 @@ const ServicesPage = () => {
       description:
         "Complete electrical wiring services for new and existing buildings. From conduit installation to distribution boards, we ensure safe, code-compliant electrical systems for your home or business.",
       heroImage: "/assets/images/house-wiring.jpeg",
+      // Add gallery if available
+      gallery: [],
       features: [
         "Complete Building Wiring",
         "Distribution Board Installation",
@@ -244,6 +257,7 @@ const ServicesPage = () => {
       description:
         "High-voltage electric fencing solutions to secure homes, estates, and commercial properties. Deter intruders with modern, reliable perimeter security systems that provide round-the-clock protection.",
       heroImage: "/assets/images/electric-fences.jpeg",
+      gallery: [],
       features: [
         "High-Voltage Deterrent System",
         "Weather-Resistant Materials",
@@ -370,6 +384,26 @@ const ServicesPage = () => {
   }
 
   const Icon = currentService.icon;
+  const hasGallery =
+    currentService.gallery && currentService.gallery.length > 0;
+
+  const nextImage = () => {
+    if (hasGallery) {
+      setCurrentImageIndex(
+        (prev) => (prev + 1) % currentService.gallery.length,
+      );
+    }
+  };
+
+  const prevImage = () => {
+    if (hasGallery) {
+      setCurrentImageIndex(
+        (prev) =>
+          (prev - 1 + currentService.gallery.length) %
+          currentService.gallery.length,
+      );
+    }
+  };
 
   return (
     <>
@@ -425,8 +459,8 @@ const ServicesPage = () => {
                 Home
               </Link>
               <span>/</span>
-              <Link to="/products" className="hover:text-green-600">
-                Products
+              <Link to="/services" className="hover:text-green-600">
+                Services
               </Link>
               <span className="text-gray-900 font-medium">
                 {currentService.name}
@@ -474,8 +508,74 @@ const ServicesPage = () => {
           </div>
         </section>
 
+        {/* Gallery Section – only if images exist */}
+        {hasGallery && (
+          <section className="py-16 bg-gray-50">
+            <div className="container mx-auto px-4">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Project Gallery
+                  </h2>
+                  <p className="text-lg text-gray-600 font-maven">
+                    See examples of our completed installations
+                  </p>
+                </div>
+
+                <div className="relative">
+                  {/* Main image */}
+                  <div className="relative aspect-video bg-gray-200 rounded-2xl overflow-hidden shadow-2xl">
+                    <img
+                      src={currentService.gallery[currentImageIndex]}
+                      alt={`${currentService.name} gallery image ${currentImageIndex + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Navigation buttons */}
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-800 hover:bg-white shadow-lg transition-all"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-800 hover:bg-white shadow-lg transition-all"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+
+                  {/* Thumbnails */}
+                  <div className="flex justify-center gap-4 mt-6 overflow-x-auto pb-2">
+                    {currentService.gallery.map((img, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentImageIndex(idx)}
+                        className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                          idx === currentImageIndex
+                            ? "border-green-600 scale-105"
+                            : "border-gray-300 opacity-70 hover:opacity-100"
+                        }`}
+                      >
+                        <img
+                          src={img}
+                          alt={`Thumbnail ${idx + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Benefits */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -518,7 +618,7 @@ const ServicesPage = () => {
         </section>
 
         {/* Packages */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -599,7 +699,7 @@ const ServicesPage = () => {
         </section>
 
         {/* Process */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">

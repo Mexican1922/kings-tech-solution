@@ -19,8 +19,8 @@ const MissionVisionSection: React.FC = () => (
             </h3>
             <p className="text-gray-600 leading-relaxed text-base md:text-lg font-maven">
               To provide affordable, reliable, and sustainable energy solutions
-              —including solar panels, inverters, batteries, charge controllers,
-              and street lights—alongside professional electrical services such
+              including solar panels, inverters, batteries, charge controllers,
+              and street lights alongside professional electrical services such
               as CCTV installation, electric fencing, and house wiring. We
               empower Nigerian homes and businesses to achieve energy
               independence, enhance security, and contribute to a cleaner

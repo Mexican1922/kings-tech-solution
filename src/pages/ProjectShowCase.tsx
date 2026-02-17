@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import { COMPANY_NAME } from "@/lib/constant";
 
 const projectsData = [
+  // Existing projects
   {
     id: 1,
     title: "Complete Solar Installation for 4‑Bedroom Home in Ikeja",
@@ -32,8 +33,8 @@ const projectsData = [
     slug: "abuja-project",
     excerpt:
       "Complete rewiring of a new build, including distribution board, sockets, lighting, and 3.5KVA inverter backup.",
-    image: "/assets/images/house-wiring.jpeg",
-    date: "December 2024",
+    image: "/assets/images/house-wiring1.jpeg",
+    date: "December 2023",
     location: "Abuja",
     category: "Electrical",
   },
@@ -44,7 +45,7 @@ const projectsData = [
     excerpt:
       "Installation of 20 all‑in‑one solar street lights along a 2km stretch, improving safety and night visibility.",
     image: "/assets/images/street-lights.jpeg",
-    date: "November 2024",
+    date: "November 2025",
     location: "Enugu",
     category: "Solar",
   },
@@ -54,7 +55,7 @@ const projectsData = [
     slug: "ph-cctv-access",
     excerpt:
       "Deployed 12 high‑definition cameras and biometric access control for a corporate office.",
-    image: "/assets/images/city-cctv.jpeg",
+    image: "/assets/images/cctv3.jpeg",
     date: "October 2024",
     location: "Rivers",
     category: "Security",
@@ -70,6 +71,77 @@ const projectsData = [
     location: "Benin",
     category: "Solar",
   },
+
+  {
+    id: 7,
+    title: "CCTV Surveillance for 6 Bedroom House in Anambra",
+    slug: "anambra-cctv",
+    excerpt:
+      "Installed 24 high‑definition cameras with night vision and remote monitoring for a large residential property.",
+    image: "/assets/images/cctv1.jpeg",
+    date: "August 2024",
+    location: "Anambra",
+    category: "Security",
+  },
+  {
+    id: 8,
+    title: "Backup Power System for Residential Estate in Enugu",
+    slug: "enugu-backup-power",
+    excerpt:
+      "Deployed 10KVA inverter system with lithium batteries to provide uninterrupted power for 20 apartments.",
+    image: "/assets/images/inverter-pro.jpeg",
+    date: "July 2024",
+    location: "Enugu",
+    category: "Solar",
+  },
+
+  {
+    id: 9,
+    title: "Solar Power System for Private School in Ibadan",
+    slug: "ibadan-school-solar",
+    excerpt:
+      "Installed 15KW solar array with hybrid inverters to power classrooms, offices, and ICT lab.",
+    image: "/assets/images/main-project.jpeg",
+    date: "June 2024",
+    location: "Ibadan",
+    category: "Solar",
+  },
+
+  {
+    id: 10,
+    title: "Perimeter CCTV & Electric Fence for Warehouse in Warri",
+    slug: "warri-warehouse-security",
+    excerpt:
+      "Comprehensive security upgrade with 16 bullet cameras and 6‑line electric fencing.",
+    image: "/assets/images/cctv2.jpeg",
+    date: "May 2024",
+    location: "Delta",
+    category: "Security",
+  },
+
+  {
+    id: 11,
+    title: "Lithium Battery Upgrade for Existing Solar System in Kano",
+    slug: "kano-battery-upgrade",
+    excerpt:
+      "Replaced old lead‑acid batteries with 15KWh lithium bank, doubling backup time and reducing maintenance.",
+    image: "/assets/images/solar-project1.jpeg",
+    date: "April 2023",
+    location: "Kano",
+    category: "Solar",
+  },
+
+  {
+    id: 12,
+    title: "Complete House Wiring for New Duplex in Ajah, Lagos",
+    slug: "ajah-house-wiring",
+    excerpt:
+      "Full electrical installation including conduit, sockets, lighting, and distribution board for a modern duplex.",
+    image: "/assets/images/house-wiring2.jpeg",
+    date: "March 2024",
+    location: "Lagos",
+    category: "Electrical",
+  },
 ];
 
 const ProjectShowcasePage = () => {
@@ -82,14 +154,14 @@ const ProjectShowcasePage = () => {
       )
     : projectsData;
 
-  // Group projects by location for filter display (optional)
+  // Group projects by location for filter display
   const locations = [...new Set(projectsData.map((p) => p.location))];
 
   return (
     <>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* Hero Section */}
+        {/* Hero Section (unchanged) */}
         <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center bg-gradient-to-br from-green-700 via-green-600 to-green-500">
           <div className="absolute inset-0 opacity-10" aria-hidden="true">
             <div
@@ -111,7 +183,7 @@ const ProjectShowcasePage = () => {
           </div>
         </section>
 
-        {/* Breadcrumb & Filter */}
+        {/* Breadcrumb & Filter (unchanged) */}
         <section className="bg-white border-b py-4 font-maven">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -264,7 +336,7 @@ const ProjectShowcasePage = () => {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* CTA (unchanged) */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">

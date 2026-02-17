@@ -62,7 +62,27 @@ const ProductsPage = () => {
     <>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* Hero Section */}
+        <section className="relative min-h-[320px] sm:min-h-[380px] md:min-h-[420px] flex items-center justify-center bg-gradient-to-br from-green-700 via-green-600 to-green-500 py-16 sm:py-20 md:py-24">
+          <div className="absolute inset-0 opacity-10" aria-hidden="true">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            />
+          </div>
+
+          <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+              Our Products & Solutions
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl text-green-50 max-w-3xl mx-auto font-maven leading-relaxed">
+              Explore our range of high-quality solar equipment and security
+              systems from {COMPANY_NAME}.
+            </p>
+          </div>
+        </section>
         <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center bg-gradient-to-br from-green-700 via-green-600 to-green-500">
           <div className="absolute inset-0 opacity-10" aria-hidden="true">
             <div
@@ -84,7 +104,6 @@ const ProductsPage = () => {
           </div>
         </section>
 
-        {/* Breadcrumb */}
         <section className="bg-white border-b py-4 font-maven">
           <div className="container mx-auto px-4">
             <div className="flex items-center gap-2 text-sm">
@@ -97,7 +116,6 @@ const ProductsPage = () => {
           </div>
         </section>
 
-        {/* Category Cards */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
@@ -110,7 +128,7 @@ const ProductsPage = () => {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-6 md:gap-8">
                 {categories.map((cat) => {
                   const Icon = cat.icon;
                   return (
@@ -119,24 +137,24 @@ const ProductsPage = () => {
                       className="group hover:shadow-2xl transition-all border-2 hover:border-green-300 overflow-hidden"
                     >
                       <CardContent className="p-8">
-                        <div className="flex items-start gap-6">
-                          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-green-600 transition-colors">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
+                          <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-green-600 transition-colors mx-auto sm:mx-0">
                             <Icon className="w-10 h-10 text-green-600 group-hover:text-white transition-colors" />
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 text-center sm:text-left">
                               {cat.name}
                             </h3>
-                            <p className="text-gray-600 mb-4 font-maven">
+                            <p className="text-sm sm:text-base text-gray-600 mb-4 font-maven text-center sm:text-left">
                               {cat.description}
                             </p>
-                            <div className="flex items-center justify-between">
-                              <span className="text-sm text-gray-500">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-0">
+                              <span className="text-xs sm:text-sm text-gray-500 text-center sm:text-left">
                                 {cat.productCount} products available
                               </span>
                               <Button
                                 asChild
-                                className="bg-green-600 hover:bg-green-700 text-white"
+                                className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto py-5 sm:py-3"
                               >
                                 <Link
                                   to={cat.link}
@@ -158,7 +176,6 @@ const ProductsPage = () => {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -168,26 +185,25 @@ const ProductsPage = () => {
               Contact our team for tailored advice and quotations for your
               specific needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-stretch md:items-center max-w-xl mx-auto">
               <Button
-                size="lg"
-                className="bg-green-600 hover:bg-green-700 text-white"
+                className="w-full md:w-auto py-6 md:py-4 bg-green-600 hover:bg-green-700 text-white"
                 asChild
               >
                 <a
-                  href={`https://api.whatsapp.com/send/?text=Hi%20${encodeURIComponent(
-                    COMPANY_NAME,
-                  )},%20I%20need%20help%20choosing%20a%20product&phone=2348137306375`}
+                  href={`https://api.whatsapp.com/send/?text=Hi%20${
+                    COMPANY_NAME
+                  },%20I%20need%20help%20choosing%20a%20product&phone=2348137306375`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Chat with Expert
                 </a>
               </Button>
+
               <Button
-                size="lg"
                 variant="outline"
-                className="border-green-600 text-green-600 hover:bg-green-50"
+                className="w-full md:w-auto py-6 md:py-4 border-green-600 text-green-600 hover:bg-green-50"
                 asChild
               >
                 <Link to="/contact-us">Request Consultation</Link>

@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle, ChevronDown } from "lucide-react";
@@ -7,7 +8,8 @@ import { categories, products } from "@/data/services";
 import type { ProductCategory } from "@/data/services";
 
 const WHATSAPP_NUMBER = "2348171479561";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20KingsTech-Solution%20I%20need%20a%20free%20quote`;
+const WHATSAPP_MESSAGE = "Hi KingsTech-Solution, I need a free quote";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 const isValidCategory = (id: string): id is ProductCategory => {
   return categories.some((cat) => cat.id === id);
@@ -194,13 +196,13 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({ product }) => (
         className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white group"
         asChild
       >
-        <a
-          href={product.link}
+        <Link
+          to={product.link}
           className="flex items-center justify-center sm:justify-start"
         >
           {product.cta}
           <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-        </a>
+        </Link>
       </Button>
     </div>
   </div>
@@ -222,7 +224,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
           <span className="text-green-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">
-            KingsTech-Solutions Services
+            Kings Tech Solutions Services
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-3 leading-tight">
             Complete Energy & Security Solutions

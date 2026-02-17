@@ -93,10 +93,10 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     products: [
       {
         id: "1",
-        name: "Jinko 610W Half-Cut Bifacial Solar Panel",
-        slug: "jinko-610w-half-cut-bifacial-solar-panel",
-        price: "₦185,000",
-        originalPrice: "₦200,000",
+        name: "Jinko 620W Half-Cut Bifacial Solar Panel",
+        slug: "jinko-620w-half-cut-bifacial-solar-panel",
+        price: "₦120,000",
+        originalPrice: "₦180,000",
         image: "/assets/images/Jinko-610w-Solar-Panels.jpeg",
         images: [
           "/assets/images/Jinko-610w-Solar-Panels.jpeg",
@@ -135,8 +135,8 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         id: "2",
         name: "Jinko 550W Half-Cut Bifacial Solar Panel",
         slug: "jinko-550w-half-cut-bifacial-solar-panel",
-        price: "₦165,000",
-        originalPrice: "₦180,000",
+        price: "₦120,000",
+        originalPrice: "₦150,000",
         image: "/assets/images/Jinko-610w-Solar-Panels.jpeg",
         images: [
           "/assets/images/Jinko-610w-Solar-Panels.jpeg",
@@ -281,7 +281,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         id: "6",
         name: "Jinko 650W Half-Cut Bifacial Solar Panel",
         slug: "jinko-650w-half-cut-bifacial-solar-panel",
-        price: "₦152,000",
+        price: "₦130,000",
         image: "/assets/images/Jinko-610w-Solar-Panels.jpeg",
         rating: 4.8,
         reviews: 54,
@@ -395,8 +395,8 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         id: "9",
         name: "15kWh Cworth Lithium Battery",
         slug: "15kwh-cworth-lithium-battery",
-        price: "₦2,850,000",
-        originalPrice: "₦3,200,000",
+        price: "₦2,100,000",
+        originalPrice: "₦2,500,000",
         image: "/assets/images/battery.jpeg",
         images: [
           "/assets/images/battery.jpeg",
@@ -435,7 +435,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         id: "10",
         name: "Felicity 15kwh 48v Lithium Battery",
         slug: "felicity-15kwh-48v-lithium-battery",
-        price: "₦1,950,000",
+        price: "₦2,350,000",
         image: "/assets/images/felicity-15kwh-48v-lithium-battery.jpeg",
         rating: 4.8,
         reviews: 67,
@@ -468,7 +468,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         id: "11",
         name: "Felicity 10kwh 48v Lithium Battery",
         slug: "felicity-10kwh-48v-lithium-battery",
-        price: "₦145,000",
+        price: "₦1,800,000",
         image: "/assets/images/felicity-10kwh-48v-lithium-battery.jpeg",
         rating: 4.6,
         reviews: 134,
@@ -502,7 +502,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         id: "12",
         name: "Felicity 7.2kwh 48v Lithium Battery",
         slug: "felicity-7.2kwh-48v-lithium-battery",
-        price: "₦980,000",
+        price: "₦1,350,000",
         image: "/assets/images/felicity-7.2kwh-48v-lithium-battery.jpeg",
         rating: 4.7,
         reviews: 38,
@@ -565,6 +565,71 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         dimensions: "480 × 360 × 170 mm",
         weight: "38 kg",
       },
+      {
+        id: "14",
+        name: "Haustrom 12v 220ah tubular battery",
+        slug: "haustrom-12v-220ah-tubular-battery",
+        price: "₦280,000",
+        image: "/assets/images/haustrom-12v-220ah-tubular-battery.jpeg",
+        rating: 4.5,
+        reviews: 56,
+        inStock: true,
+        badge: "Value",
+        shortDescription:
+          "Durable tubular battery for off-grid and backup applications",
+        description:
+          "The Haustrom 12V 220Ah tubular battery is a robust and reliable power source for off-grid and backup applications. With its high capacity and long lifespan, it's ideal for residential and commercial use.",
+        specs: [
+          "220Ah capacity at 12V",
+          "Tubular plate technology for deep cycle performance",
+          "Sealed maintenance-free design",
+        ],
+        features: [
+          "Capacity: 220Ah",
+          "Voltage: 12V",
+          "Battery Type: Tubular Deep Cycle",
+          "Cycle Life: 1200 cycles @ 50% DOD",
+          "Float Life: 10-12 years",
+          "Self-Discharge: <3% per month",
+        ],
+        warranty: "2-year warranty",
+        dimensions: "520 × 240 × 220 mm",
+        weight: "58 kg",
+      },
+
+      {
+        id: "15",
+        name: "Amazon Quanta 12V 200Ah Tubular Battery",
+        slug: "amazon-quanta-12v-200ah-tubular-battery",
+        price: "₦260,000",
+        image: "/assets/images/amazon-quanta-12v-200ah-tubular-battery.jpeg",
+        rating: 4.7,
+        reviews: 34,
+        inStock: true,
+        badge: "Popular",
+        shortDescription:
+          "High-capacity tubular battery for extended off-grid power supply",
+        description:
+          "The Amazon Quanta 12V 200Ah tubular battery is a high-capacity power source designed for extended off-grid applications. With its robust construction and long cycle life, it's ideal for residential and commercial off-grid solar systems.",
+        specs: [
+          "200Ah capacity at 12V",
+          "Tubular plate technology for deep cycle performance",
+          "Sealed maintenance-free design",
+          "High discharge rate capability",
+          "Extended float life",
+        ],
+        features: [
+          "Capacity: 200Ah",
+          "Voltage: 12V",
+          "Battery Type: Tubular Deep Cycle",
+          "Cycle Life: 1500 cycles @ 50% DOD",
+          "Float Life: 15-20 years",
+          "Self-Discharge: <3% per month",
+        ],
+        warranty: "3-year warranty",
+        dimensions: "545 × 265 × 235 mm",
+        weight: "68 kg",
+      },
     ],
   },
 
@@ -574,7 +639,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Cpu,
     products: [
       {
-        id: "14",
+        id: "16",
         name: "Felicity 5KVA Hybrid Inverter",
         slug: "felicity-5kva-hybrid-inverter",
         price: "₦420,000",
@@ -613,7 +678,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "25 kg",
       },
       {
-        id: "15",
+        id: "17",
         name: "Felicity 5kva 24v Inverter",
         slug: "felicity-5kva-24v-inverter",
         price: "₦750,000",
@@ -646,7 +711,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "42 kg",
       },
       {
-        id: "16",
+        id: "19",
         name: "Felicity 7.5kva 48v Hybrid Inverter",
         slug: "felicity-7.5kva-48v-hybrid-inverter",
         price: "₦320,000",
@@ -678,10 +743,10 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "18 kg",
       },
       {
-        id: "17",
+        id: "20",
         name: "1.8kva Cworth Inverter",
         slug: "cworth-1.8kva-inverter",
-        price: "₦1,250,000",
+        price: "₦355,000",
         image: "/assets/images/cworth-1.8kva-inverter.jpeg",
         rating: 5.0,
         reviews: 28,
@@ -711,7 +776,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "30 kg",
       },
       {
-        id: "18",
+        id: "21",
         name: "SRNR 3.3kW 24V DC Inverter",
         slug: "srnr-3.3kw-24vdc-inverter",
         price: "₦1,100,000",
@@ -744,7 +809,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "8 kg",
       },
       {
-        id: "19",
+        id: "22",
         name: "SRNR 10kW 48V DC Inverter",
         slug: "srnr-10kw-48vdc-inverter",
         price: "₦1,100,000",
@@ -777,7 +842,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "8 kg",
       },
       {
-        id: "20",
+        id: "23",
         name: "SRNE ASP Series 12kW 48V 200A MPPT Hybrid Inverter",
         slug: "srne-asp-series-12kw-48v-200a-mppt-hybrid-inverter",
         price: "₦1,500,000",
@@ -811,7 +876,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "15 kg",
       },
       {
-        id: "21",
+        id: "24",
         name: "SMS 2KVA 12V Hybrid Inverter",
         slug: "sms-2kva-12v-hybrid-inverter",
         price: "₦450,000",
@@ -845,7 +910,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "7 kg",
       },
       {
-        id: "22",
+        id: "25",
         name: "SMS 4.2KVA 24V Hybrid Inverter",
         slug: "sms-4.2kva-24v-hybrid-inverter",
         price: "₦650,000",
@@ -879,7 +944,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "7 kg",
       },
       {
-        id: "23",
+        id: "26",
         name: "SMS 10.2KVA 48V Hybrid Inverter",
         slug: "sms-10.2kva-48v-hybrid-inverter",
         price: "₦1,250,000",
@@ -921,7 +986,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Zap,
     products: [
       {
-        id: "24",
+        id: "27",
         name: "Felicity 80A MPPT Charge Controller",
         slug: "felicity-80a-mppt-charge-controller",
         price: "₦85,000",
@@ -959,7 +1024,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "3.5 kg",
       },
       {
-        id: "25",
+        id: "28",
         name: "Felicity 120A charge controller",
         slug: "felicity-120a-charge-controller",
         price: "₦145,000",
@@ -992,7 +1057,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "1.3 kg",
       },
       {
-        id: "26",
+        id: "29",
         name: "Felicity  60A charge controller",
         slug: "felicity-60a-charge-controller",
         price: "₦65,000",
@@ -1065,7 +1130,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Lightbulb,
     products: [
       {
-        id: "27",
+        id: "30",
         name: "Felicity 60W All-in-One Solar Street Light",
         slug: "felicity-60w-all-in-one-solar-street-light",
         price: "₦120,000",
@@ -1097,72 +1162,6 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         dimensions: "780 × 280 × 60 mm",
         weight: "12 kg",
       },
-      // {
-      //   id: "19",
-      //   name: "100W Solar Street Light with Remote",
-      //   slug: "100w-solar-street-light-with-remote",
-      //   price: "₦165,000",
-      //   image: "/assets/images/street-light-100w.jpeg",
-      //   rating: 4.9,
-      //   reviews: 52,
-      //   inStock: true,
-      //   badge: "Premium",
-      //   shortDescription: "High-power street light with remote control",
-      //   description:
-      //     "100W solar street light provides powerful illumination for wide areas. Remote control allows easy adjustment of brightness and timing. Perfect for highways and large compounds.",
-      //   specs: [
-      //     "100W high-power LED",
-      //     "Remote control included",
-      //     "Adjustable brightness",
-      //     "Timer function",
-      //     "Motion sensor mode",
-      //     "Weather resistant",
-      //   ],
-      //   features: [
-      //     "LED Power: 100W",
-      //     "Luminous Flux: 12000 lumens",
-      //     "Solar Panel: 120W",
-      //     "Battery: 50Ah LiFePO4",
-      //     "Runtime: 15 hours",
-      //     "Coverage: 8-10 meters radius",
-      //   ],
-      //   warranty: "3-year warranty",
-      //   dimensions: "950 × 350 × 70 mm",
-      //   weight: "18 kg",
-      // },
-      // {
-      //   id: "20",
-      //   name: "40W Solar Street Light",
-      //   slug: "40w-solar-street-light",
-      //   price: "₦85,000",
-      //   image: "/assets/images/street-light-40w.jpeg",
-      //   rating: 4.6,
-      //   reviews: 94,
-      //   inStock: true,
-      //   badge: "Value",
-      //   shortDescription: "Budget-friendly solar light for pathways",
-      //   description:
-      //     "40W solar street light offers reliable illumination at an affordable price. Perfect for garden paths, driveways, and small compounds. Easy installation with no wiring required.",
-      //   specs: [
-      //     "40W LED output",
-      //     "Compact design",
-      //     "Plug and play",
-      //     "Auto on/off",
-      //     "No wiring needed",
-      //     "Low maintenance",
-      //   ],
-      //   features: [
-      //     "LED Power: 40W",
-      //     "Luminous Flux: 4800 lumens",
-      //     "Solar Panel: 60W",
-      //     "Battery: 20Ah LiFePO4",
-      //     "Runtime: 10 hours",
-      //     "Pole Height: 3-4 meters",
-      //   ],
-      //   warranty: "2-year warranty",
-      //   dimensions: "650 × 240 × 50 mm",
-      //   weight: "8 kg",
-      // },
     ],
   },
 
@@ -1176,7 +1175,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Camera,
     products: [
       {
-        id: "21",
+        id: "31",
         name: "4-Camera HD CCTV Package (Basic Home Security)",
         slug: "4-camera-hd-cctv-package-basic",
         price: "₦150,000",
@@ -1216,7 +1215,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "3-month equipment warranty, 1-year installation warranty",
       },
       {
-        id: "22",
+        id: "32",
         name: "8-Camera HD/4K CCTV Package (Small Business)",
         slug: "8-camera-hd-4k-cctv-package-business",
         price: "₦280,000",
@@ -1257,7 +1256,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "6-month equipment warranty, 1-year installation warranty",
       },
       {
-        id: "23",
+        id: "33",
         name: "16-Camera 4K IP CCTV Package (Enterprise)",
         slug: "16-camera-4k-ip-cctv-package-enterprise",
         price: "₦520,000",
@@ -1302,7 +1301,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
           "12-month comprehensive warranty, 2-year installation warranty",
       },
       {
-        id: "24",
+        id: "34",
         name: "Custom CCTV Solution (Tailored Package)",
         slug: "custom-cctv-solution-tailored",
         price: "From ₦100,000",
@@ -1348,7 +1347,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Cable,
     products: [
       {
-        id: "25",
+        id: "35",
         name: "Residential Wiring Package (2-3 Bedroom)",
         slug: "residential-wiring-2-3-bedroom",
         price: "₦200,000",
@@ -1390,7 +1389,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "2-year workmanship warranty",
       },
       {
-        id: "26",
+        id: "36",
         name: "Commercial Wiring Package (Office/Shop)",
         slug: "commercial-wiring-office-shop",
         price: "₦500,000",
@@ -1433,7 +1432,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "3-year workmanship warranty",
       },
       {
-        id: "27",
+        id: "37",
         name: "Industrial Wiring Solution (Factory/Warehouse)",
         slug: "industrial-wiring-factory-warehouse",
         price: "Custom Quote",
@@ -1471,7 +1470,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "5-year workmanship warranty",
       },
       {
-        id: "28",
+        id: "38",
         name: "Electrical Fault Diagnosis & Repair",
         slug: "electrical-fault-diagnosis-repair",
         price: "From ₦25,000",
@@ -1517,7 +1516,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Shield,
     products: [
       {
-        id: "29",
+        id: "39",
         name: "Residential Electric Fence (50-100 Meters)",
         slug: "residential-electric-fence-50-100m",
         price: "₦150,000",
@@ -1559,7 +1558,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "6-month warranty on energizer and components",
       },
       {
-        id: "30",
+        id: "40",
         name: "Estate/Commercial Electric Fence (200+ Meters)",
         slug: "estate-commercial-electric-fence-200m",
         price: "₦400,000",
@@ -1603,7 +1602,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "12-month comprehensive warranty",
       },
       {
-        id: "31",
+        id: "41",
         name: "Industrial High-Security Fence (Custom)",
         slug: "industrial-high-security-fence-custom",
         price: "Custom Quote",
@@ -1642,7 +1641,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "24-month comprehensive warranty, optional extended support",
       },
       {
-        id: "32",
+        id: "42",
         name: "Electric Fence Maintenance & Repair",
         slug: "electric-fence-maintenance-repair",
         price: "From ₦20,000",

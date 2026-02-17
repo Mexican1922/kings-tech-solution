@@ -6,6 +6,7 @@ import { ArrowLeft, Calendar, MapPin, Package } from "lucide-react";
 import { COMPANY_NAME } from "@/lib/constant";
 
 const projectsData = [
+  // Existing 6 projects (keep as they are)
   {
     id: 1,
     slug: "lagos-project",
@@ -39,7 +40,7 @@ const projectsData = [
     `,
     gallery: [
       "/assets/images/work.jpeg",
-      "/assets/images/solar-panels-close.jpg",
+      "/assets/images/abuja-project.jpeg",
       "/assets/images/inverter-install.jpg",
     ],
     tags: ["Solar", "Lagos", "Residential", "Hybrid Inverter"],
@@ -76,7 +77,7 @@ const projectsData = [
     `,
     gallery: [
       "/assets/images/electric-fences.jpeg",
-      "/assets/images/cctv.jpeg",
+      "/assets/images/cctv4.jpeg",
       "/assets/images/security-control-room.jpg",
     ],
     tags: ["Electric Fence", "CCTV", "Ibadan", "Estate Security"],
@@ -89,7 +90,7 @@ const projectsData = [
     date: "December 2024",
     location: "Abuja",
     category: "Electrical",
-    image: "/assets/images/house-wiring.jpeg",
+    image: "/assets/images/house-wiring1.jpeg",
     excerpt:
       "Complete rewiring of a new build, including distribution board, sockets, lighting, and 3.5KVA inverter backup.",
     description: `
@@ -164,7 +165,7 @@ const projectsData = [
     date: "October 2024",
     location: "Rivers",
     category: "Security",
-    image: "/assets/images/city-cctv.jpeg",
+    image: "/assets/images/cctv3.jpeg",
     excerpt:
       "Deployed 12 high‑definition cameras and biometric access control for a corporate office.",
     description: `
@@ -232,6 +233,235 @@ const projectsData = [
     ],
     tags: ["Industrial Solar", "Benin", "Grid‑tied", "Factory"],
   },
+
+  {
+    id: 7,
+    slug: "anambra-cctv-family",
+    title: "CCTV Surveillance for 6 Bedroom House in Anambra",
+    author: COMPANY_NAME,
+    date: "August 2024",
+    location: "Anambra",
+    category: "Security",
+    image: "/assets/images/cctv1.jpeg",
+    excerpt:
+      "Installed 24 high‑definition cameras with night vision and remote monitoring for a large residential property.",
+    description: `
+      <p>A large residential property in Anambra required comprehensive security coverage to deter theft and monitor activity. We designed and installed a state‑of‑the‑art CCTV system.</p>
+      
+      <h2>System Components</h2>
+      <ul>
+        <li>24 high‑definition dome and bullet cameras</li>
+        <li>32‑channel NVR with 8TB storage (30 days retention)</li>
+        <li>Remote viewing via mobile app</li>
+        <li>Night vision and motion detection</li>
+        <li>Weatherproof cameras for outdoor areas</li>
+      </ul>
+
+      <h2>Benefits</h2>
+      <ul>
+        <li>24/7 monitoring of all entrances, parking lots, and corridors</li>
+        <li>Reduced incidents of shoplifting</li>
+        <li>Quick incident review and evidence retrieval</li>
+        <li>Peace of mind for tenants and shoppers</li>
+      </ul>
+    `,
+    gallery: [
+      "/assets/images/cctv-anambra.jpeg",
+      "/assets/images/cctv-install.jpg",
+      "/assets/images/nvr-setup.jpg",
+    ],
+    tags: ["CCTV", "Anambra", "Shopping Plaza", "Security"],
+  },
+  {
+    id: 8,
+    slug: "enugu-backup-power",
+    title: "Backup Power System for Residential Estate in Enugu",
+    author: COMPANY_NAME,
+    date: "July 2024",
+    location: "Enugu",
+    category: "Solar",
+    image: "/assets/images/inverter-pro.jpeg",
+    excerpt:
+      "Deployed 10KVA inverter system with lithium batteries to provide uninterrupted power for 20 apartments.",
+    description: `
+      <p>A residential estate in Enugu faced frequent power outages. We installed a centralized backup power system to serve common areas and individual apartments.</p>
+      
+      <h2>System Design</h2>
+      <ul>
+        <li>10KVA 3‑phase hybrid inverter</li>
+        <li>4 x 5KWh lithium batteries (20KWh total)</li>
+        <li>Solar panel array on the estate clubhouse roof (5KW)</li>
+        <li>Automatic transfer switch</li>
+        <li>Sub‑distribution to each apartment block for lighting and security lights</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>Uninterrupted power for common areas and security lights</li>
+        <li>Each apartment gets backup for essential loads</li>
+        <li>Reduced noise and emissions from individual generators</li>
+        <li>Residents report improved quality of life</li>
+      </ul>
+    `,
+    gallery: [
+      "/assets/images/inverter-enugu.jpeg",
+      "/assets/images/battery-bank.jpg",
+      "/assets/images/solar-roof.jpg",
+    ],
+    tags: ["Backup Power", "Enugu", "Inverter", "Estate"],
+  },
+  {
+    id: 9,
+    slug: "ibadan-school-solar",
+    title: "Solar Power System for Private School in Ibadan",
+    author: COMPANY_NAME,
+    date: "June 2024",
+    location: "Ibadan",
+    category: "Solar",
+    image: "/assets/images/main-project.jpeg",
+    excerpt:
+      "Installed 15KW solar array with hybrid inverters to power classrooms, offices, and ICT lab.",
+    description: `
+      <p>A private school in Ibadan needed a reliable power source for their computer lab and administrative offices. We designed a hybrid solar system.</p>
+      
+      <h2>Installation</h2>
+      <ul>
+        <li>36 x 450W solar panels (16.2KW total)</li>
+        <li>2 x 5KVA hybrid inverters (parallel configuration)</li>
+        <li>4 x 200Ah gel batteries</li>
+        <li>Reinforced roof mounting</li>
+        <li>Integration with generator for cloudy days</li>
+      </ul>
+
+      <h2>Results</h2>
+      <ul>
+        <li>24/7 power for ICT lab, enabling uninterrupted computer classes</li>
+        <li>Reduced generator fuel consumption by 70%</li>
+        <li>Quiet environment conducive to learning</li>
+        <li>Educational opportunity for students to learn about renewable energy</li>
+      </ul>
+    `,
+    gallery: [
+      "/assets/images/solar-ibadan.jpeg",
+      "/assets/images/school-install.jpg",
+      "/assets/images/inverter-rack.jpg",
+    ],
+    tags: ["Solar", "Ibadan", "School", "Hybrid Inverter"],
+  },
+  {
+    id: 10,
+    slug: "warri-warehouse-security",
+    title: "Perimeter CCTV & Electric Fence for Warehouse in Warri",
+    author: COMPANY_NAME,
+    date: "May 2024",
+    location: "Delta",
+    category: "Security",
+    image: "/assets/images/cctv2.jpeg",
+    excerpt:
+      "Comprehensive security upgrade with 16 bullet cameras and 6‑line electric fencing.",
+    description: `
+      <p>A large warehouse in Warri storing valuable goods required a robust security perimeter. We combined electric fencing and CCTV for maximum protection.</p>
+      
+      <h2>Security Measures</h2>
+      <ul>
+        <li>6‑line electric fence around the entire perimeter (800m)</li>
+        <li>16 bullet cameras with night vision covering all approaches</li>
+        <li>16‑channel NVR with 6TB storage</li>
+        <li>Alarm integration with instant notifications</li>
+        <li>Remote monitoring via mobile app</li>
+      </ul>
+
+      <h2>Benefits</h2>
+      <ul>
+        <li>Deters intruders physically with electric shock</li>
+        <li>Full video evidence of any incidents</li>
+        <li>Security personnel can monitor from anywhere</li>
+        <li>Insurance premium reduction due to enhanced security</li>
+      </ul>
+    `,
+    gallery: [
+      "/assets/images/cctv-warri.jpeg",
+      "/assets/images/electric-fence-close.jpg",
+      "/assets/images/security-room.jpg",
+    ],
+    tags: ["CCTV", "Electric Fence", "Warri", "Warehouse Security"],
+  },
+  {
+    id: 11,
+    slug: "kano-battery-upgrade",
+    title: "Lithium Battery Upgrade for Existing Solar System in Kano",
+    author: COMPANY_NAME,
+    date: "April 2024",
+    location: "Kano",
+    category: "Solar",
+    image: "/assets/images/solar-project1.jpeg",
+    excerpt:
+      "Replaced old lead‑acid batteries with 15KWh lithium bank, doubling backup time and reducing maintenance.",
+    description: `
+      <p>A client in Kano had an existing solar system with aging lead‑acid batteries that required frequent maintenance and provided limited backup. We upgraded them to modern lithium batteries.</p>
+      
+      <h2>Upgrade Details</h2>
+      <ul>
+        <li>Removed 8 x 200Ah lead‑acid batteries (9.6KWh usable)</li>
+        <li>Installed 3 x 5KWh wall‑mount lithium batteries (15KWh usable)</li>
+        <li>Reconfigured inverter settings for lithium profile</li>
+        <li>Added battery management system (BMS) monitoring</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>Backup time increased from 4 hours to 10 hours</li>
+        <li>No more water topping or equalization charges</li>
+        <li>Lithium batteries occupy 60% less space</li>
+        <li>Extended lifespan (10+ years vs 3‑4 years for lead‑acid)</li>
+      </ul>
+    `,
+    gallery: [
+      "/assets/images/battery-kano.jpeg",
+      "/assets/images/lithium-rack.jpg",
+      "/assets/images/inverter-with-batteries.jpg",
+    ],
+    tags: ["Battery Upgrade", "Kano", "Lithium", "Solar"],
+  },
+  {
+    id: 12,
+    slug: "ajah-house-wiring",
+    title: "Complete House Wiring for New Duplex in Ajah, Lagos",
+    author: COMPANY_NAME,
+    date: "March 2024",
+    location: "Lagos",
+    category: "Electrical",
+    image: "/assets/images/house-wiring2.jpeg",
+    excerpt:
+      "Full electrical installation including conduit, sockets, lighting, and distribution board for a modern duplex.",
+    description: `
+      <p>A newly constructed duplex in Ajah, Lagos needed a complete electrical installation. We provided end‑to‑end wiring services.</p>
+      
+      <h2>Scope of Work</h2>
+      <ul>
+        <li>Conduit installation throughout the building</li>
+        <li>40+ double sockets placed per architectural plan</li>
+        <li>LED downlights in all rooms with dimmers in living areas</li>
+        <li>30‑way distribution board with surge protection</li>
+        <li>Earthing system for safety</li>
+        <li>Pre‑wiring for AC units and security system</li>
+      </ul>
+
+      <h2>Results</h2>
+      <ul>
+        <li>Modern, safe electrical system meeting Nigerian standards</li>
+        <li>Plenty of outlets to accommodate future appliances</li>
+        <li>Clean installation with no visible wires</li>
+        <li>Passed final inspection with flying colors</li>
+      </ul>
+    `,
+    gallery: [
+      "/assets/images/wiring-owerri.jpeg",
+      "/assets/images/distribution-board.jpg",
+      "/assets/images/conduit-work.jpg",
+    ],
+    tags: ["House Wiring", "Ajah", "New Build", "Electrical"],
+  },
 ];
 
 const ProjectDetailPage = () => {
@@ -265,7 +495,7 @@ const ProjectDetailPage = () => {
     <>
       <Header />
       <main className="min-h-screen">
-        {/* Hero Section */}
+        {/* Hero Section (unchanged) */}
         <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center bg-gradient-to-br from-green-700 via-green-600 to-green-500">
           <div className="absolute inset-0 opacity-10" aria-hidden="true">
             <div
@@ -289,7 +519,7 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
-        {/* Breadcrumb */}
+        {/* Breadcrumb (unchanged) */}
         <section className="bg-white py-4 border-b font-maven">
           <div className="container mx-auto px-4">
             <div className="flex items-center gap-2 mb-4">
@@ -316,7 +546,7 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
-        {/* Main Content */}
+        {/* Main Content (unchanged structure) */}
         <article className="py-12 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">

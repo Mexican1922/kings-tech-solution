@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, CheckCircle, Award, Clock, ArrowRight } from "lucide-react";
@@ -17,13 +19,13 @@ interface Feature {
 }
 
 // ---------- Constants ----------
-const WHATSAPP_NUMBER = "2348137306375"; // unified number
+const WHATSAPP_NUMBER = "2348137306375";
 const WHATSAPP_HELP_URL = `https://api.whatsapp.com/send/?text=Hi%20KingsTech-Solution,%20I%20need%20help%20finding%20an%20installer&phone=${WHATSAPP_NUMBER}`;
 
 const LOCATIONS: Location[] = [
   { name: "Lagos", image: "/cities/lagos.png", installers: 10, stateId: "24" },
   { name: "Abuja", image: "/cities/abuja.png", installers: 3, stateId: "37" },
-  { name: "Kano", image: "/cities/kano.jpg", installers: 2, stateId: "19" },
+  { name: "Enugu", image: "/cities/enugu.jpg", installers: 2, stateId: "19" },
   { name: "Benin", image: "/cities/benin.png", installers: 8, stateId: "33" },
   { name: "Ibadan", image: "/cities/ibadan.jpg", installers: 5, stateId: "32" },
   {
@@ -59,25 +61,39 @@ interface LocationCardProps {
   location: Location;
 }
 
-const LocationCard: React.FC<LocationCardProps> = ({ location }) => (
-  <a
-    href={`/project-showcase/state/${location.stateId}`}
-    className="group"
-    aria-label={`${location.name} with ${location.installers} installers`}
-  >
-    <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-      <CardContent className="p-6 text-center">
-        <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-green-100 to-green-50 rounded-full flex items-center justify-center group-hover:from-green-600 group-hover:to-green-500 transition-all">
-          <MapPin className="w-8 h-8 text-green-600 group-hover:text-white transition-colors" />
-        </div>
-        <h4 className="font-bold text-gray-900 mb-1">{location.name}</h4>
-        <p className="text-xs text-gray-600 font-maven">
-          {location.installers}+ Installers
-        </p>
-      </CardContent>
-    </Card>
-  </a>
-);
+const LocationCard: React.FC<LocationCardProps> = ({ location }) => {
+  const citiesWithProjects = [
+    "Lagos",
+    "Abuja",
+    "Benin",
+    "Anambra",
+    "Enugu",
+    "Ibadan",
+  ];
+  const linkTo = citiesWithProjects.includes(location.name)
+    ? `/project-showcase?city=${location.name.toLowerCase()}`
+    : "/find-installers";
+
+  return (
+    <Link
+      to={linkTo}
+      className="group"
+      aria-label={`${location.name} with ${location.installers} installers`}
+    >
+      <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        <CardContent className="p-6 text-center">
+          <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-green-100 to-green-50 rounded-full flex items-center justify-center group-hover:from-green-600 group-hover:to-green-500 transition-all">
+            <MapPin className="w-8 h-8 text-green-600 group-hover:text-white transition-colors" />
+          </div>
+          <h4 className="font-bold text-gray-900 mb-1">{location.name}</h4>
+          <p className="text-xs text-gray-600 font-maven">
+            {location.installers}+ Installers
+          </p>
+        </CardContent>
+      </Card>
+    </Link>
+  );
+};
 
 interface FeatureItemProps {
   feature: Feature;
@@ -103,7 +119,6 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ feature }) => {
 };
 
 const StatsRow: React.FC = () => {
-  // Optional: derive from LOCATIONS if needed
   const stats = [
     { value: "10+", label: "Installers" },
     { value: "12", label: "States" },
@@ -152,7 +167,6 @@ const InstallersSection = () => {
 
             {/* Map Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              {/* If using Next.js: <Image ... /> */}
               <img
                 src="/assets/images/location_frame_2.png"
                 alt="Service locations across Nigeria"
@@ -190,13 +204,13 @@ const InstallersSection = () => {
                 className="bg-green-600 hover:bg-green-700 text-white group"
                 asChild
               >
-                <a
-                  href="/find-installers"
+                <Link
+                  to="/find-installers"
                   className="flex items-center justify-center font-maven"
                 >
                   Find an Installer Near You
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </Button>
 
               <Button

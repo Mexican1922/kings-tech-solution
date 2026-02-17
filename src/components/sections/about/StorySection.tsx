@@ -4,7 +4,6 @@ const StorySection: React.FC = () => (
   <section className="py-20 bg-white">
     <div className="container mx-auto px-4">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
-        {/* Image with stat box */}
         <div className="relative">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <img
@@ -19,12 +18,11 @@ const StorySection: React.FC = () => (
 
           {/* Responsive stat box */}
           <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-green-600 text-white p-4 md:p-8 rounded-xl shadow-lg">
-            <p className="text-3xl md:text-5xl font-bold">2+</p>
+            <p className="text-3xl md:text-5xl font-bold">4+</p>
             <p className="text-xs md:text-sm">Years Strong</p>
           </div>
         </div>
 
-        {/* Text content */}
         <div>
           <span className="text-green-600 font-semibold text-sm uppercase tracking-wider">
             Our Story
@@ -52,13 +50,13 @@ const StorySection: React.FC = () => (
             </p>
             <p className="text-lg">
               Our commitment goes beyond just selling solar products. We provide
-              comprehensive solutions—from expert consultation and professional
+              comprehensive solutions from expert consultation and professional
               installation to ongoing maintenance and support. Our network of
               certified installers ensures that every system is set up safely,
               efficiently, and to the highest standards.
             </p>
             <p className="text-lg font-semibold text-gray-900">
-              At {COMPANY_NAME}, we don't just power homes—we empower lives,
+              At {COMPANY_NAME}, we don't just power homes we empower lives,
               enable businesses, and contribute to a cleaner, greener Nigeria.
             </p>
           </div>

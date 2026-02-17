@@ -5,7 +5,7 @@ const WHATSAPP_NUMBER = "2348137306375";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20KingsTech-Solution%20I%20need%20a%20free%20quote`;
 
 const stats = [
-  { value: "4+", label: "Service Centers" },
+  { value: "12+", label: "States Covered" }, // ✅ Changed from "Service Centers"
   { value: "2023", label: "Established", highlight: true },
   { value: "100+", label: "Happy Customers" },
 ];
@@ -62,7 +62,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 max-w-2xl font-maven">
-            Solar installations, CCTV systems, house wiring, and fencing —
+            Solar installations, CCTV systems, house wiring, and fencing
             delivered professionally across Nigeria
           </p>
 
