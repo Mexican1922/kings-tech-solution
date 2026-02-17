@@ -17,7 +17,7 @@ const WHATSAPP_URL_CHAT = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComp
 const STATS: Stat[] = [
   { value: "2023", label: "Established" },
   { value: "On-Request", label: "Service Deployment" },
-  { value: "100+", label: "Happy Customers" },
+  { value: "50+", label: "Happy Customers" },
   { value: "24/7", label: "Support" },
 ];
 
@@ -45,7 +45,6 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 font-maven">
-            {/* Get a Free Quote – now opens WhatsApp with quote message */}
             <Button
               size="lg"
               className="bg-white text-green-700 hover:bg-gray-100 text-lg px-8 py-6 group shadow-lg hover:shadow-xl transition-all"
