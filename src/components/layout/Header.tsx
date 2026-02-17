@@ -363,14 +363,12 @@ const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 md:h-24">
-          {" "}
-          {/* Increased header height */}
           <Link to="/" className="flex items-center shrink-0">
             <div className="p-1 rounded-md">
               <img
                 src="/logo.svg"
                 alt="KingsTech-Solutions Logo"
-                className="h-[120px] md:h-[138px] w-auto" /* Larger logo */
+                className="h-[100px] md:h-[138px] w-auto"
               />
             </div>
           </Link>

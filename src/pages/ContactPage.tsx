@@ -60,7 +60,7 @@ const ContactPage = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
               Get in Touch
             </h1>
-            <p className="text-xl md:text-2xl text-green-50 max-w-2xl mx-auto font-maven">
+            <p className="text-xl md:text-2xl text-green-50 max-w-2xl mx-auto">
               Have questions? Our team is ready to help with demos, system
               requirements, or product inquiries.
             </p>
@@ -68,7 +68,7 @@ const ContactPage = () => {
         </section>
 
         {/* Breadcrumb */}
-        <section className="bg-white border-b py-4 font-maven">
+        <section className="bg-white border-b py-4">
           <div className="container mx-auto px-4">
             <div className="flex items-center gap-2 text-sm">
               <Link

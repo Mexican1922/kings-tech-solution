@@ -7,7 +7,7 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20KingsTech-Solut
 const stats = [
   { value: "12+", label: "States Covered" }, // ✅ Changed from "Service Centers"
   { value: "2023", label: "Established", highlight: true },
-  { value: "100+", label: "Happy Customers" },
+  { value: "50+", label: "Happy Customers" },
 ];
 
 const StatsList: React.FC = () => (

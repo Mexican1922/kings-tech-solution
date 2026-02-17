@@ -87,7 +87,7 @@ const TESTIMONIALS: Testimonial[] = [
 ];
 
 const STATS: Stat[] = [
-  { value: "100+", label: "Happy Customers" },
+  { value: "50+", label: "Happy Customers" },
   { value: "4.9", label: "Average Rating" },
   { value: "95%", label: "Satisfaction Rate" },
   { value: "24/7", label: "Support Available" },
@@ -208,7 +208,6 @@ const TestimonialsSection = () => {
 
         <StatsBox stats={STATS} />
 
-        {/* ✅ Write a Review CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4 font-maven">
             Share your experience with us – we'd love to hear from you!
