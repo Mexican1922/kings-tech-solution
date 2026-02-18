@@ -418,11 +418,11 @@ const projectsData = [
     title: "Electric Fencing at Abuja",
     slug: "asokoro-wiring",
     excerpt:
-      "Complete electrical installation for a new duplex in Asokoro, with smart home pre‑wiring.",
+      "Installed a 6‑line electric fence with alarm integration for a private residence in Abuja, enhancing perimeter security.",
     image: "/assets/images/benin-project.jpeg",
     date: "October 2023",
     location: "Abuja",
-    category: "Electrical",
+    category: "Security",
   },
   {
     id: 39,

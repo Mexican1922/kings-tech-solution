@@ -1405,40 +1405,40 @@ const projectsData = [
   {
     id: 38,
     slug: "asokoro-wiring",
-    title: "House Wiring for Duplex in Asokoro",
+    title: "Electric Fencing at Abuja",
     author: COMPANY_NAME,
     date: "October 2023",
     location: "Abuja",
-    category: "Electrical",
+    category: "Security",
     image: "/assets/images/benin-project.jpeg",
     excerpt:
-      "Complete electrical installation for a new duplex in Asokoro, with smart home pre‑wiring.",
+      "Installed a 6‑line electric fence with alarm integration for a private residence in Abuja, enhancing perimeter security.",
     description: `
-      <p>A new duplex in Asokoro needed a modern electrical system, with pre‑wiring for future smart home features. We handled the complete installation.</p>
-      
-      <h2>Scope of Work</h2>
-      <ul>
-        <li>Full conduit wiring for all rooms</li>
-        <li>30‑way distribution board with surge protection</li>
-        <li>LED lighting with dimmers in living areas</li>
-        <li>Pre‑wiring for internet, CCTV, and audio system</li>
-        <li>Earthing system for safety</li>
-      </ul>
+    <p>A private residence in Abuja required a robust perimeter security system to deter intruders. We installed a 6‑line electric fence with alarm integration, providing effective security while maintaining aesthetic appeal.</p>
+    
+    <h2>Installation</h2>
+    <ul>
+      <li>6‑line electric fence around the entire property (approx. 500m)</li>
+      <li>High‑powered energizer with battery backup</li>
+      <li>Integration with central alarm system</li>
+      <li>Warning signs and flashing lights at all gates</li>
+      <li>Remote monitoring via mobile app</li>
+    </ul>
 
-      <h2>Results</h2>
-      <ul>
-        <li>Safe, modern electrical system</li>
-        <li>Future‑proofed for smart home integration</li>
-        <li>Clean installation with no visible wires</li>
-        <li>Passed final inspection</li>
-      </ul>
-    `,
+    <h2>Outcome</h2>
+    <ul>
+      <li>Significant reduction in attempted intrusions</li>
+      <li>Homeowner can monitor fence status remotely</li>
+      <li>Immediate alerts on fence tampering</li>
+      <li>Low maintenance and weather‑resistant design</li>
+    </ul>
+  `,
     gallery: [
       "/assets/images/benin-project.jpeg",
-      "/assets/images/distribution-board.jpg",
-      "/assets/images/conduit-work.jpg",
+      "/assets/images/electric-fence-close.jpg",
+      "/assets/images/energizer-setup.jpg",
     ],
-    tags: ["House Wiring", "Abuja", "New Build", "Electrical"],
+    tags: ["Electric Fence", "Abuja", "Perimeter Security", "Residential"],
   },
   {
     id: 39,
