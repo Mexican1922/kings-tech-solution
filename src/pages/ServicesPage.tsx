@@ -197,7 +197,7 @@ const ServicesPage = () => {
         },
         {
           name: "Commercial Wiring",
-          price: "From ₦500,000",
+          price: "Custom Quote",
           features: [
             "Office/Shop Space",
             "Heavy-Duty Wiring",
@@ -508,7 +508,6 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        {/* Gallery Section – only if images exist */}
         {hasGallery && (
           <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4">

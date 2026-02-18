@@ -8,7 +8,6 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-// ---------- Types ----------
 export interface Value {
   icon: LucideIcon;
   title: string;
@@ -78,25 +77,25 @@ export const milestones: Milestone[] = [
     year: "2023",
     title: "Company Founded",
     description:
-      "Kings Tech Solutions was established in Lagos, Nigeria with a vision to provide reliable solar energy solutions to homes and businesses.",
+      "Kings Tech Solutions was established in Lagos, Nigeria with a vision to provide reliable solar energy systems, including panels, inverters, and batteries, to local homes and businesses.",
   },
   {
     year: "2024",
-    title: "Expanded Operations",
+    title: "First Projects & Service Expansion",
     description:
-      "Opened service centers across major cities, bringing our expertise closer to customers nationwide.",
+      "Completed initial solar installations and began offering CCTV, electric fencing, and house wiring services to meet growing client needs for integrated security and energy solutions.",
   },
   {
     year: "2025",
-    title: "Product Innovation",
+    title: "Growing Customer Base",
     description:
-      "Launched advanced solar inverter and battery systems, setting new standards for efficiency and reliability.",
+      "Served 50+ satisfied customers across Lagos and nearby states, built relationships with certified installers, and introduced solar street lights for community projects.",
   },
   {
     year: "2026",
-    title: "Growing Trust",
+    title: "Building Trust & Reach",
     description:
-      "Served over 50+ satisfied customers and established partnerships with certified installers across Nigeria.",
+      "Continued to expand our portfolio with more efficient inverters and batteries, while strengthening our reputation as a reliable partner for homes and small businesses.",
   },
 ];
 
