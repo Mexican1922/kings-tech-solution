@@ -82,8 +82,6 @@ export const categories: {
   { id: "wiring", name: "House Wiring", icon: Cable },
   { id: "fencing", name: "Electric Fencing", icon: Shield },
 ];
-
-// Complete Products Database
 export const productsDatabase: Record<ProductCategory, CategoryData> = {
   panels: {
     title: "Solar Panels",
@@ -630,6 +628,40 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         dimensions: "545 × 265 × 235 mm",
         weight: "68 kg",
       },
+      {
+        id: "33",
+        name: "Cworth 5kwh lithium battery",
+        slug: "cworth-5kwh-lithium-battery",
+        price: "₦950,000",
+        image: "/assets/images/cworth-5kwh-lithium-battery.jpeg",
+        rating: 4.9,
+        reviews: 32,
+        inStock: true,
+        badge: "Premium",
+        shortDescription:
+          "High-capacity lithium battery for large solar systems",
+        description:
+          "The Cworth 5kWh lithium battery is a high-capacity, long-lasting battery designed for large solar installations. It offers excellent performance, reliability, and safety features.",
+        specs: [
+          "5kWh capacity",
+          "Lithium Iron Phosphate (LiFePO4)",
+          "Built-in BMS protection",
+          "Fast charging capability",
+          "Long cycle life",
+          "Temperature range: -20°C to +60°C",
+        ],
+        features: [
+          "Battery Capacity: 5kWh",
+          "Battery Type: LiFePO4",
+          "Charging Voltage: 54V DC",
+          "Discharge Current: 100A Max",
+          "Cycle Life: 3000+ cycles",
+          "Safety Features: Overcharge, Overcurrent, Short Circuit Protection",
+        ],
+        warranty: "10-year warranty",
+        dimensions: "380 × 280 × 180 mm",
+        weight: "22 kg",
+      },
     ],
   },
 
@@ -711,7 +743,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "42 kg",
       },
       {
-        id: "19",
+        id: "18",
         name: "Felicity 7.5kva 48v Hybrid Inverter",
         slug: "felicity-7.5kva-48v-hybrid-inverter",
         price: "₦880,000",
@@ -743,7 +775,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "18 kg",
       },
       {
-        id: "20",
+        id: "19",
         name: "1.8kva Cworth Inverter",
         slug: "cworth-1.8kva-inverter",
         price: "₦380,000",
@@ -776,7 +808,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "30 kg",
       },
       {
-        id: "21",
+        id: "20",
         name: "SRNE 3.3kW 24V DC Inverter",
         slug: "srne-3.3kw-24vdc-inverter",
         price: "₦505,000",
@@ -809,7 +841,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "8 kg",
       },
       {
-        id: "22",
+        id: "21",
         name: "SRNE 10kW 48V DC Inverter",
         slug: "srne-10kw-48vdc-inverter",
         price: "₦1,800,000",
@@ -842,7 +874,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "8 kg",
       },
       {
-        id: "23",
+        id: "22",
         name: "SRNE ASP Series 12kW 48V 200A MPPT Hybrid Inverter",
         slug: "srne-asp-series-12kw-48v-200a-mppt-hybrid-inverter",
         price: "₦2,700,000",
@@ -876,7 +908,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "15 kg",
       },
       {
-        id: "24",
+        id: "23",
         name: "SMS 2KVA 12V Hybrid Inverter",
         slug: "sms-2kva-12v-hybrid-inverter",
         price: "₦395,000",
@@ -910,7 +942,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "7 kg",
       },
       {
-        id: "25",
+        id: "24",
         name: "SMS 4.2KVA 24V Hybrid Inverter",
         slug: "sms-4.2kva-24v-hybrid-inverter",
         price: "₦470,000",
@@ -944,7 +976,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "7 kg",
       },
       {
-        id: "26",
+        id: "25",
         name: "SMS 10.2KVA 48V Hybrid Inverter",
         slug: "sms-10.2kva-48v-hybrid-inverter",
         price: "₦950,000",
@@ -986,7 +1018,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Zap,
     products: [
       {
-        id: "27",
+        id: "26",
         name: "Felicity 80A MPPT Charge Controller",
         slug: "felicity-80a-mppt-charge-controller",
         price: "₦200,000",
@@ -1024,7 +1056,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "3.5 kg",
       },
       {
-        id: "28",
+        id: "27",
         name: "Felicity 120A charge controller",
         slug: "felicity-120a-charge-controller",
         price: "₦300,000",
@@ -1057,7 +1089,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "1.3 kg",
       },
       {
-        id: "29",
+        id: "28",
         name: "Felicity  60A charge controller",
         slug: "felicity-60a-charge-controller",
         price: "₦190,000",
@@ -1090,7 +1122,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "2.8 kg",
       },
       {
-        id: "30",
+        id: "29",
         name: "Felicity 100A charge controller",
         slug: "felicity-100a-charge-controller",
         price: "₦230,000",
@@ -1123,7 +1155,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         weight: "1.3 kg",
       },
       {
-        id: "32",
+        id: "30",
         name: "SMS 100A mppt charge controller",
         slug: "sms-100a-mppt-charge-controller",
         price: "₦210,000",
@@ -1158,7 +1190,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
       },
 
       {
-        id: "33",
+        id: "31",
         name: "60A PWM charge controller",
         slug: "60a-pwm-charge-controller",
         price: "₦65,000",
@@ -1193,7 +1225,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
       },
 
       {
-        id: "34",
+        id: "32",
         name: "Must 100A charge Controller",
         slug: "must-100a-charge-controller",
         price: "₦210,000",
@@ -1226,40 +1258,6 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         dimensions: "315 × 280 × 125 mm",
         weight: "3.2 kg",
       },
-      {
-        id: "35",
-        name: "Cworth 5kwh lithium battery",
-        slug: "cworth-5kwh-lithium-battery",
-        price: "₦950,000",
-        image: "/assets/images/cworth-5kwh-lithium-battery.jpeg",
-        rating: 4.9,
-        reviews: 32,
-        inStock: true,
-        badge: "Premium",
-        shortDescription:
-          "High-capacity lithium battery for large solar systems",
-        description:
-          "The Cworth 5kWh lithium battery is a high-capacity, long-lasting battery designed for large solar installations. It offers excellent performance, reliability, and safety features.",
-        specs: [
-          "5kWh capacity",
-          "Lithium Iron Phosphate (LiFePO4)",
-          "Built-in BMS protection",
-          "Fast charging capability",
-          "Long cycle life",
-          "Temperature range: -20°C to +60°C",
-        ],
-        features: [
-          "Battery Capacity: 5kWh",
-          "Battery Type: LiFePO4",
-          "Charging Voltage: 54V DC",
-          "Discharge Current: 100A Max",
-          "Cycle Life: 3000+ cycles",
-          "Safety Features: Overcharge, Overcurrent, Short Circuit Protection",
-        ],
-        warranty: "10-year warranty",
-        dimensions: "380 × 280 × 180 mm",
-        weight: "22 kg",
-      },
     ],
   },
 
@@ -1269,7 +1267,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Lightbulb,
     products: [
       {
-        id: "31",
+        id: "34",
         name: "Felicity 60W All-in-One Solar Street Light",
         slug: "felicity-60w-all-in-one-solar-street-light",
         price: "₦120,000",
@@ -1304,9 +1302,6 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     ],
   },
 
-  // Add these product arrays to the services-corrected.ts file
-
-  // For CCTV category - add to productsDatabase
   cctv: {
     title: "CCTV Surveillance Systems",
     subtitle:
@@ -1314,7 +1309,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Camera,
     products: [
       {
-        id: "31",
+        id: "35",
         name: "4-Camera HD CCTV Package (Basic Home Security)",
         slug: "4-camera-hd-cctv-package-basic",
         price: "₦150,000",
@@ -1354,7 +1349,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "3-month equipment warranty, 1-year installation warranty",
       },
       {
-        id: "32",
+        id: "36",
         name: "8-Camera HD/4K CCTV Package (Small Business)",
         slug: "8-camera-hd-4k-cctv-package-business",
         price: "₦280,000",
@@ -1395,7 +1390,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "6-month equipment warranty, 1-year installation warranty",
       },
       {
-        id: "33",
+        id: "37",
         name: "16-Camera 4K IP CCTV Package (Enterprise)",
         slug: "16-camera-4k-ip-cctv-package-enterprise",
         price: "₦520,000",
@@ -1440,7 +1435,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
           "12-month comprehensive warranty, 2-year installation warranty",
       },
       {
-        id: "34",
+        id: "38",
         name: "Custom CCTV Solution (Tailored Package)",
         slug: "custom-cctv-solution-tailored",
         price: "From ₦100,000",
@@ -1478,7 +1473,6 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     ],
   },
 
-  // For Wiring category - add to productsDatabase
   wiring: {
     title: "Electrical & House Wiring",
     subtitle:
@@ -1486,7 +1480,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Cable,
     products: [
       {
-        id: "35",
+        id: "39",
         name: "Residential Wiring Package (2-3 Bedroom)",
         slug: "residential-wiring-2-3-bedroom",
         price: "₦200,000",
@@ -1528,10 +1522,10 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "2-year workmanship warranty",
       },
       {
-        id: "36",
+        id: "40",
         name: "Commercial Wiring Package (Office/Shop)",
         slug: "commercial-wiring-office-shop",
-        price: "₦500,000",
+        price: "Custom Quote", // Changed to Custom Quote
         originalPrice: "₦600,000",
         image: "/assets/images/wiring-commercial.jpeg",
         images: [
@@ -1571,7 +1565,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "3-year workmanship warranty",
       },
       {
-        id: "37",
+        id: "41",
         name: "Industrial Wiring Solution (Factory/Warehouse)",
         slug: "industrial-wiring-factory-warehouse",
         price: "Custom Quote",
@@ -1609,7 +1603,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "5-year workmanship warranty",
       },
       {
-        id: "38",
+        id: "42",
         name: "Electrical Fault Diagnosis & Repair",
         slug: "electrical-fault-diagnosis-repair",
         price: "From ₦25,000",
@@ -1647,7 +1641,6 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     ],
   },
 
-  // For Fencing category - add to productsDatabase
   fencing: {
     title: "Electric & Security Fencing",
     subtitle:
@@ -1655,7 +1648,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
     icon: Shield,
     products: [
       {
-        id: "39",
+        id: "43",
         name: "Residential Electric Fence (50-100 Meters)",
         slug: "residential-electric-fence-50-100m",
         price: "₦150,000",
@@ -1697,7 +1690,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "6-month warranty on energizer and components",
       },
       {
-        id: "40",
+        id: "44",
         name: "Estate/Commercial Electric Fence (200+ Meters)",
         slug: "estate-commercial-electric-fence-200m",
         price: "₦400,000",
@@ -1741,7 +1734,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "12-month comprehensive warranty",
       },
       {
-        id: "41",
+        id: "45",
         name: "Industrial High-Security Fence (Custom)",
         slug: "industrial-high-security-fence-custom",
         price: "Custom Quote",
@@ -1780,7 +1773,7 @@ export const productsDatabase: Record<ProductCategory, CategoryData> = {
         warranty: "24-month comprehensive warranty, optional extended support",
       },
       {
-        id: "42",
+        id: "46",
         name: "Electric Fence Maintenance & Repair",
         slug: "electric-fence-maintenance-repair",
         price: "From ₦20,000",
@@ -1880,10 +1873,10 @@ export const products: Record<ProductCategory, ProductData> = {
     cta: "View More",
     link: "/products/felicity-solar-inverter",
     featured: {
-      name: "Felicity 5KVA Hybrid Inverter",
+      name: "Felicity 3KVA Hybrid Inverter",
       image: "/assets/images/Inverter.jpeg",
       description:
-        "The Felicity 5KVA Hybrid Inverter is a powerful and intelligent energy management solution designed for residential and small commercial solar systems. With advanced MPPT technology, seamless switching between solar, battery, and grid power, and pure sine wave output, it ensures stable and uninterrupted electricity supply.",
+        "The Felicity 3KVA Hybrid Inverter is a powerful and intelligent energy management solution designed for residential and small commercial solar systems. With advanced MPPT technology, seamless switching between solar, battery, and grid power, and pure sine wave output, it ensures stable and uninterrupted electricity supply.",
       specs: [
         "5KVA rated output capacity",
         "Advanced MPPT solar charge controller",

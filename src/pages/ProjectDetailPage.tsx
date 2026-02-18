@@ -968,7 +968,7 @@ const projectsData = [
       <h2>Upgrade Details</h2>
       <ul>
         <li>Removed 24 x 200Ah lead‑acid batteries (28.8KWh usable)</li>
-        <li>Installed 6 x 5KWh wall‑mount lithium batteries (30KWh usable)</li>
+        <li>Installed 15KWh wall‑mount lithium batteries</li>
         <li>Reconfigured inverter settings for optimal lithium performance</li>
         <li>Added remote monitoring system</li>
       </ul>
@@ -1187,14 +1187,14 @@ const projectsData = [
     category: "Solar",
     image: "/assets/images/benin-clinic.jpeg",
     excerpt:
-      "Installed 5KVA inverter with lithium batteries to ensure critical medical equipment stays on.",
+      "Installed 3.2KVA inverter with lithium batteries to ensure critical medical equipment stays on.",
     description: `
-      <p>A private clinic in Benin City needed reliable backup power for critical medical equipment. We installed a 5KVA inverter system with lithium batteries.</p>
+      <p>A private clinic in Benin City needed reliable backup power for critical medical equipment. We installed a 3.2KVA inverter system with lithium batteries.</p>
       
       <h2>System Components</h2>
       <ul>
-        <li>5KVA 48V hybrid inverter</li>
-        <li>10KWh lithium battery bank</li>
+        <li>3.2KVA 48V hybrid inverter</li>
+        <li>24v lithium battery bank</li>
         <li>Automatic changeover with grid backup</li>
         <li>Surge protection for sensitive equipment</li>
       </ul>
@@ -1526,12 +1526,12 @@ const projectsData = [
     excerpt:
       "Installed 10KVA inverter with 20KWh lithium battery for a hotel, ensuring guest comfort.",
     description: `
-      <p>A hotel in Abuja wanted to ensure uninterrupted power for guests. We installed a 10KVA inverter system with lithium batteries.</p>
+      <p>A hotel in Abuja wanted to ensure uninterrupted power for guests. We installed a 5KVA inverter system with lithium batteries.</p>
       
       <h2>System Components</h2>
       <ul>
-        <li>10KVA 48V hybrid inverter</li>
-        <li>20KWh lithium battery bank</li>
+        <li>5KVA 48V hybrid inverter</li>
+        <li>10KWh lithium battery bank</li>
         <li>Automatic changeover with grid backup</li>
         <li>Surge protection for sensitive equipment</li>
       </ul>

@@ -285,7 +285,7 @@ const projectsData = [
     title: "Inverter Upgrade for Hotel in Ikeja",
     slug: "ikeja-hotel-upgrade",
     excerpt:
-      "Replaced lead‑acid batteries with 30KWh lithium bank for a hotel, ensuring uninterrupted power.",
+      "Replaced lead‑acid batteries with 15KWh lithium bank for a hotel, ensuring uninterrupted power.",
     image: "/assets/images/inverter-pro4.jpeg",
     date: "October 2023",
     location: "Lagos",
@@ -352,7 +352,7 @@ const projectsData = [
     title: "Inverter Backup for Clinic in Benin",
     slug: "benin-clinic-backup",
     excerpt:
-      "Installed 5KVA inverter with lithium batteries to ensure critical medical equipment stays on.",
+      "Installed 3.2KVA inverter with lithium batteries to ensure critical medical equipment stays on.",
     image: "/assets/images/benin-clinic.jpeg",
     date: "April 2023",
     location: "Benin",
@@ -415,7 +415,7 @@ const projectsData = [
   },
   {
     id: 38,
-    title: "House Wiring for Duplex in Asokoro",
+    title: "Electric Fencing at Abuja",
     slug: "asokoro-wiring",
     excerpt:
       "Complete electrical installation for a new duplex in Asokoro, with smart home pre‑wiring.",
@@ -451,7 +451,7 @@ const projectsData = [
     title: "Inverter Backup for Hotel in Abuja",
     slug: "abuja-hotel-backup",
     excerpt:
-      "Installed 10KVA inverter with 20KWh lithium battery for a hotel, ensuring guest comfort.",
+      "Installed 5KVA inverter with 10KWh lithium battery for a hotel, ensuring guest comfort.",
     image: "/assets/images/abuja-hotel.jpeg",
     date: "July 2023",
     location: "Abuja",
