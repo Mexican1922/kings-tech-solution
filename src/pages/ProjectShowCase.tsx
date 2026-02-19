@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { COMPANY_NAME } from "@/lib/constant";
@@ -558,6 +558,7 @@ const projectsData = [
 
 const ProjectShowcasePage = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const cityFilter = searchParams.get("city");
 
   const filteredProjects = cityFilter
@@ -593,7 +594,7 @@ const ProjectShowcasePage = () => {
           </div>
         </section>
 
-        {/* Breadcrumb & Filter (unchanged) */}
+        {/* Breadcrumb & Filter */}
         <section className="bg-white border-b py-4 font-maven">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -623,10 +624,11 @@ const ProjectShowcasePage = () => {
                   value={cityFilter || ""}
                   onChange={(e) => {
                     const city = e.target.value;
-                    const url = city
-                      ? `/project-showcase?city=${city.toLowerCase()}`
-                      : "/project-showcase";
-                    window.location.href = url;
+                    if (city) {
+                      navigate(`/project-showcase?city=${city.toLowerCase()}`);
+                    } else {
+                      navigate("/project-showcase");
+                    }
                   }}
                   className="px-3 py-1 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-green-600"
                 >
@@ -746,7 +748,7 @@ const ProjectShowcasePage = () => {
           </div>
         </section>
 
-        {/* CTA (unchanged) */}
+        {/* CTA */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
