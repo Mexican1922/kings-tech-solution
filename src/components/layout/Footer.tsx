@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 import {
@@ -75,12 +76,12 @@ const LinkSection: React.FC<{ title: string; links: LinkItem[] }> = ({
       <ul className="space-y-2">
         {links.map((link) => (
           <li key={link.href}>
-            <a
-              href={link.href}
+            <Link
+              to={link.href}
               className="text-gray-300 hover:text-green-500 transition-colors"
             >
               {link.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -129,9 +130,7 @@ const Footer = () => {
           </div>
 
           <LinkSection title="Company" links={COMPANY_LINKS} />
-
           <LinkSection title="Products" links={PRODUCT_LINKS} />
-
           <LinkSection title="Services" links={SERVICE_LINKS} />
 
           <div className="col-span-2 lg:col-span-1">
