@@ -13,10 +13,12 @@ import FindInstallersPage from "./pages/FindInstallersPage";
 import ProjectShowcasePage from "./pages/ProjectShowCase";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ProductsPage from "./pages/ProductsPage";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about-us" element={<AboutPage />} />
