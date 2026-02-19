@@ -352,7 +352,7 @@ const projectsData = [
     title: "Inverter Backup for Clinic in Benin",
     slug: "benin-clinic-backup",
     excerpt:
-      "Installed 3.2KVA inverter with lithium batteries to ensure critical medical equipment stays on.",
+      "Installed 3.2KVA inverter with dry cell batteries to ensure critical medical equipment stays on.",
     image: "/assets/images/benin-clinic.jpeg",
     date: "April 2023",
     location: "Benin",

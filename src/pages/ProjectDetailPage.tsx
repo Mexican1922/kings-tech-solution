@@ -1194,7 +1194,7 @@ const projectsData = [
       <h2>System Components</h2>
       <ul>
         <li>3.2KVA 48V hybrid inverter</li>
-        <li>24v lithium battery bank</li>
+        <li>24v dry cell battery bank</li>
         <li>Automatic changeover with grid backup</li>
         <li>Surge protection for sensitive equipment</li>
       </ul>
