@@ -269,7 +269,7 @@ const ProductDetailPage = () => {
                       className="w-6 h-6 text-green-600 mx-auto mb-2"
                       aria-hidden="true"
                     />
-                    <p className="text-xs text-gray-600">Delivery Available*</p>
+                    <p className="text-xs text-gray-600">Delivery Available</p>
                   </div>
                 </div>
 
