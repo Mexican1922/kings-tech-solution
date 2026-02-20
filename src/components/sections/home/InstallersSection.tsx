@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, CheckCircle, Award, Clock, ArrowRight } from "lucide-react";
 
-// ---------- Types ----------
 interface Location {
   name: string;
   image: string;

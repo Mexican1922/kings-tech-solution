@@ -6,8 +6,6 @@ import MissionVisionSection from "@/components/sections/about/MissionVisionSecti
 import ValuesSection from "@/components/sections/about/ValuesSection";
 import MilestonesSection from "@/components/sections/about/MilestonesSection";
 import TeamSection from "@/components/sections/about/TeamSection";
-// import StatsSection from "@/components/sections/about/StatsSection";
-// import LocationsSection from "@/components/sections/about/LocationsSection";
 import CTASection from "@/components/sections/about/CTASection";
 import "./AboutPage.module.css";
 
@@ -22,8 +20,7 @@ const AboutPage = () => {
         <ValuesSection />
         <MilestonesSection />
         <TeamSection />
-        {/* <StatsSection />
-        <LocationsSection /> */}
+
         <CTASection />
       </main>
       <Footer />

@@ -1,10 +1,8 @@
-
 interface HeroSectionProps {
-  /** Main heading text */
   title: string;
-  /** Optional supporting text */
+
   subtitle?: string;
-  /** Optional background image URL – if omitted, a green gradient is used */
+
   backgroundImage?: string;
 }
 
