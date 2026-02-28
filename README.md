@@ -1,73 +1,91 @@
-# React + TypeScript + Vite
+# Kings Tech Solutions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Kings Tech Solutions is a modern web application for a renewable energy and security solutions provider in Nigeria. The company specializes in providing reliable solar energy systems, CCTV, electric fencing, and professional electrical installation services.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Home Page**: Overview of services, customer testimonials, and quick links.
+- **About Us**: Company history, core values, and team information.
+- **Products**: Detailed catalog of solar panels, batteries, inverters, charge controllers, and street lights.
+- **Services**: Information on professional services including CCTV installation, house wiring, and electric fencing.
+- **Project Showcase**: Portfolio of completed installations and projects.
+- **Find Installers**: A directory to find certified installers across various locations in Nigeria.
+- **Blog**: Industry news, guides, and updates.
+- **Contact Us**: Get in touch for quotes, support, or inquiries.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project is built using modern web technologies:
 
-## Expanding the ESLint configuration
+- **Framework**: [React 19](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Routing**: [React Router](https://reactrouter.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/) primitives
+- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
+- **Carousel**: [Embla Carousel](https://www.embla-carousel.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine. The development environment uses Node.js v22.22.0. You can use either `npm` or `bun` as your package manager.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+Clone the repository and install the dependencies:
+
+```bash
+# Using npm
+npm install
+
+# Using bun
+bun install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Running the Development Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To start the local development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Using npm
+npm run dev
+
+# Using bun
+bun run dev
 ```
+
+The application will typically be available at `http://localhost:5173`.
+
+### Building for Production
+
+To create a production-ready build:
+
+```bash
+# Using npm
+npm run build
+
+# Using bun
+bun run build
+```
+
+This will generate a `dist` directory with the compiled assets.
+
+## Project Structure
+
+- `src/components/`: Reusable UI components (layout, sections, UI elements).
+- `src/pages/`: Main page components corresponding to routes.
+- `src/data/`: Static data files (products, services, about info).
+- `src/lib/`: Utility functions and configuration constants.
+- `src/hooks/`: Custom React hooks.
+- `src/types/`: TypeScript type definitions.
+- `public/`: Static assets like images and icons.
+
+## Contact Information
+
+**Kings Tech Solutions**
+- **Address**: No.4, Ola Sheu Street, Alimosho, Iyana Ipaja, Lagos, Nigeria
+- **Phone**: +234 813 730 6375 / +234 909 219 3041
+- **Email**: kingstechsolutions01@gmail.com
+- **WhatsApp**: [Chat with us](https://wa.me/2348137306375)
